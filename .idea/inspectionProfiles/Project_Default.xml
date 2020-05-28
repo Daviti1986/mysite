@@ -1,0 +1,15 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="cars.views.django" />
+          <option value="cars.models.*" />
+          <option value="django.contrib.url" />
+          <option value="mysite.wsgi.*" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
