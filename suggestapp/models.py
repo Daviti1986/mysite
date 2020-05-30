@@ -1,3 +1,18 @@
+from __future__ import unicode_literals
 from django.db import models
 
 # Create your models here.
+
+class Suggest(models.Model):
+
+    set_name  = models.CharField(default='-', max_length=30 )
+    name      = models.CharField(max_length=30 )
+    short_txt = models.TextField()
+    body_txt  = models.TextField()
+    date      = models.CharField(max_length=12)
+    pic       = models.TextField()
+    writer    = models.CharField(max_length=50 )
+    def __str__(self):
+        return self.set_name + ' | ' + str (self.pk)
+
+
