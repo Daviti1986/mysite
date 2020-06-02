@@ -19,14 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ded3f7a7-fc7d-4d1d-9999-3c75c5ef4e10" name="Default Changelist" comment="Suggest">
-      <change afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/error.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/suggest_add.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/suggestapp/migrations/0002_auto_20200602_1335.py" afterDir="false" />
+    <list default="true" id="ded3f7a7-fc7d-4d1d-9999-3c75c5ef4e10" name="Default Changelist" comment="upload">
+      <change afterPath="$PROJECT_DIR$/suggestapp/migrations/0003_auto_20200602_1635.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/suggestapp/migrations/0004_suggest_time.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mycarapp/templates/back/pages/master.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/master.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mycarapp/templates/back/pages/suggest_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/suggest_add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mycarapp/templates/back/pages/suggest_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/suggest_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mycarapp/templates/front/pages/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/front/pages/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mycarapp/templates/front/pages/suggest_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/front/pages/suggest_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/suggestapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/suggestapp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/suggestapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/suggestapp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/suggestapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/suggestapp/views.py" afterDir="false" />
@@ -148,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590851373679</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="upload">
+      <created>1591098775469</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1591098775469</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -169,7 +176,8 @@
     <MESSAGE value="new_app" />
     <MESSAGE value="new_apps" />
     <MESSAGE value="Suggest" />
-    <option name="LAST_COMMIT_MESSAGE" value="Suggest" />
+    <MESSAGE value="upload" />
+    <option name="LAST_COMMIT_MESSAGE" value="upload" />
   </component>
   <component name="WindowStateProjectService">
     <state x="309" y="42" key="#Inspections" timestamp="1590323710674">
@@ -212,9 +220,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="9" key="SettingsEditor/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1590658375907" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1590851390012">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1591098789824">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1590851390012" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1591098789824" />
   </component>
 </project>

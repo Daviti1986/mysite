@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'^suggest/(?P<word>\w.*)$', views.suggest_detail, name = 'suggest_detail'),
     url(r'^panel/suggest/list/$', views.suggest_list, name = 'suggest_list'),
     url(r'^panel/suggest/add/$', views.suggest_add, name = 'suggest_add'),
+    url(r'^panel/suggest/del/(?P<pk>\d+)/$', views.suggest_delete, name = 'suggest_delete'),
 ]
