@@ -15,3 +15,24 @@ def suggest_list(request):
 
     suggest = Suggest.objects.all()
     return render(request, 'back/pages/suggest_list.html', {'sugest': suggest })
+
+def suggest_add(request):
+
+
+    if request.method == 'POST':
+        suggesttitle = request.POST.get('suggesttitle')
+        suggestname  = request.POST.get('suggestname')
+        suggestcat   = request.POST.get('suggestcat')
+        suggestshort = request.POST.get('suggestshort')
+        suggesttxt   = request.POST.get('suggesttxt')
+
+        if suggesttitle == '' or suggestname == '' or suggestcat == '' or suggestshort == '' or suggesttxt == '':
+            error = 'ALL Fields Requirded'
+            return render(request, 'back/pages/error.html', {'error':error})
+        data = Suggest(set_name = suggesttitle, name = suggestname,
+                       short_txt = suggestshort, body_txt = suggesttxt, catname = suggestcat, date = '2019',
+                       pic = '-', writer = '-', catid = 0, show = 0)
+        data.save()
+        return redirect('suggest_list')
+
+    return render(request, 'back/pages/suggest_add.html')
