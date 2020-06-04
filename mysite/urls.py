@@ -23,6 +23,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('mycarapp.urls')),
     url(r'', include('suggestapp.urls')),
+    url(r'', include('CategoryApp.urls')),
+    url(r'', include('SubCategoryApp.urls')),
 ]
 
 if settings.DEBUG:
