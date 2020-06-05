@@ -3,6 +3,7 @@ from .models import Suggest
 from mycarapp.models import MyCar
 from django.core.files.storage import FileSystemStorage
 import datetime
+from SubCategoryApp.models import SubCategoryApp
 
 
 # Create your views here.
@@ -31,12 +32,15 @@ def suggest_add(request):
     today = str(year) + '/' + str(month) + '/' + str(day)
     time = str(now.hour) + ':' + str(now.minute)
 
+    cat = SubCategoryApp.objects.all()
+
     if request.method == 'POST':
         suggesttitle = request.POST.get('suggesttitle')
         suggestname  = request.POST.get('suggestname')
         suggestcat   = request.POST.get('suggestcat')
         suggestshort = request.POST.get('suggestshort')
         suggesttxt   = request.POST.get('suggesttxt')
+        suggestid    = request.POST.get('suggestcat')
 
         if suggesttitle == '' or suggestname == '' or suggestcat == '' or suggestshort == '' or suggesttxt == '':
             error = 'ALL Fields Requirded'
@@ -51,10 +55,12 @@ def suggest_add(request):
             if str(myfile.content_type).startswith('image'):
 
                 if myfile.size < 5000000 :
+                    suggestname = SubCategoryApp.objects.get(pk=suggestid).name
+
                     data = Suggest(set_name = suggesttitle, name = suggestname,
-                                   short_txt = suggestshort, body_txt = suggesttxt, catname = suggestcat, date = today,
-                                   picname = filename, picurl = url, writer = '-',
-                                   catid = 0, show = 0, time = time,)
+                                   short_txt = suggestshort, body_txt = suggesttxt, catname = suggestname, catid = suggestid,
+                                   date = today, picname = filename, picurl = url, writer = '-',
+                                   show = 0, time = time,)
                     data.save()
                     return redirect('suggest_list')
 
@@ -76,7 +82,7 @@ def suggest_add(request):
             error = "Please input your image"
             return render(request, 'back/pages/error.html', {'error': error})
 
-    return render(request, 'back/pages/suggest_add.html')
+    return render(request, 'back/pages/suggest_add.html', {'cat': cat})
 
 def suggest_delete(request, pk):
 
@@ -91,3 +97,82 @@ def suggest_delete(request, pk):
 
 
     return  redirect('suggest_list')
+
+def suggest_edit(request, pk):
+
+    if len(Suggest.objects.filter(pk=pk)) == 0 :
+        error = "News Not Found"
+        return render(request, 'back/pages/error.html', {'error': error})
+
+    suggest = Suggest.objects.get(pk=pk)
+    cat = SubCategoryApp.objects.all()
+
+    if request.method == 'POST':
+        suggesttitle = request.POST.get('suggesttitle')
+        suggestname  = request.POST.get('suggestname')
+        suggestcat   = request.POST.get('suggestcat')
+        suggestshort = request.POST.get('suggestshort')
+        suggesttxt   = request.POST.get('suggesttxt')
+        suggestid    = request.POST.get('suggestcat')
+
+        if suggesttitle == '' or suggestname == '' or suggestcat == '' or suggestshort == '' or suggesttxt == '':
+            error = 'ALL Fields Requirded'
+            return render(request, 'back/pages/error.html', {'error':error})
+
+        try:
+            myfile = request.FILES['myfile']
+            fs = FileSystemStorage()
+            filename = fs.save(myfile.name, myfile)
+            url = fs.url(filename)
+
+            if str(myfile.content_type).startswith('image'):
+
+                if myfile.size < 5000000 :
+                    suggestname = SubCategoryApp.objects.get(pk=suggestid).name
+
+                    data = Suggest.objects.get(pk=pk)
+
+                    fss = FileSystemStorage()
+                    fss.delete(data.picnanem)
+
+                    data.name = suggesttitle
+                    data.shor_txt = suggestshort
+                    data.body_txt = suggesttxt
+                    data.picnanem = filename
+                    data.pcurl = url
+                    data.catname = suggestname
+                    data.catid = suggestid
+
+                    data.save()
+                    return redirect('suggest_list')
+
+                else:
+                    fs = FileSystemStorage()
+                    fs.delete(filename)
+
+                    error = "Your File Is Bigger Than 5 MB"
+                    return render(request, 'back/pages/error.html', {'error': error})
+
+            else:
+                fs = FileSystemStorage()
+                fs.delete(filename)
+
+                error = "Your File Not Supported"
+                return render(request, 'back/pages/error.html', {'error': error})
+
+        except:
+            suggestname = SubCategoryApp.objects.get(pk=suggestid).name
+
+            data = Suggest.objects.get(pk=pk)
+
+            data.name = suggesttitle
+            data.shor_txt = suggestshort
+            data.body_txt = suggesttxt
+            data.catname = suggestname
+            data.catid = suggestid
+
+            data.save()
+            return redirect('suggest_list')
+
+
+    return render(request, 'back/pages/suggest_edit.html', {'pk': pk, 'suggest': suggest, 'cat': cat})

@@ -37,4 +37,3 @@ def sub_category_add(request):
     return render(request, 'back/pages/sub_category_add.html', {'categories' : categories})
 
 
-

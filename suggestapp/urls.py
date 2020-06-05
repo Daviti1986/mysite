@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^panel/suggest/list/$', views.suggest_list, name = 'suggest_list'),
     url(r'^panel/suggest/add/$', views.suggest_add, name = 'suggest_add'),
     url(r'^panel/suggest/del/(?P<pk>\d+)/$', views.suggest_delete, name = 'suggest_delete'),
+    url(r'^panel/suggest/edit/(?P<pk>\d+)/$', views.suggest_edit, name = 'suggest_edit'),
 ]
