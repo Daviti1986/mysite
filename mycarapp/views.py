@@ -1,16 +1,18 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import MyCar
 from suggestapp.models import Suggest
+from CategoryApp.models import CategoryApp
 
 
 # Create your views here.
 
 def home(requset):
     site = MyCar.objects.get(pk = 2)
-    suggest = Suggest.objects.all()
+    suggest = Suggest.objects.all().order_by('-pk')
+    cat = CategoryApp.objects.all()
 
 
-    return render(requset, 'front/pages/home.html', {'site':site, 'suggest':suggest})
+    return render(requset, 'front/pages/home.html', {'site':site, 'suggest':suggest, 'cat':cat})
 
 
 def about(requset):

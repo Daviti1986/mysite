@@ -16,35 +16,30 @@
     </ul>
 <!-- END Datatables Header -->
 <div class="row">
-                            <div class="col-md-6">
-                                <!-- Basic Form Elements Block -->
-                                <div class="block">
-                                    <!-- Basic Form Elements Title -->
-                                    <div class="block-title">
-                                        <h2><strong>Add</strong> Category</h2>
-                                    </div>
-                                    <!-- END Form Elements Title -->
-
-                                    <!-- Basic Form Elements Content -->
-                                    <form action="{% url 'category_add' %}" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered">
-                                        {% csrf_token %}
-                                        <div class="form-group">
-                                            <div class="col-md-6">
-                                                <input type="text" id="name" name="name" class="form-control" placeholder="Category Title">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <div class="col-md-12">
-                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Submit</button>
-                                            </div>
-                                        </div>
-
-                                    </form>
-                                    <!-- END Basic Form Elements Content -->
-                                </div>
-
-
+    <div class="col-md-6">
+        <!-- Basic Form Elements Block -->
+        <div class="block">
+            <!-- Basic Form Elements Title -->
+            <div class="block-title">
+                <h2><strong>Add</strong> Category</h2>
+            </div>
+            <!-- END Form Elements Title -->
+            <!-- Basic Form Elements Content -->
+            <form action="{% url 'category_add' %}" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered">
+                {% csrf_token %}
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Category Title">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Submit</button>
+                    </div>
+                </div>
+            </form>
+            <!-- END Basic Form Elements Content -->
+        </div>
 {% endblock %}
 
 {% block footerblock %}

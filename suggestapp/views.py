@@ -4,6 +4,7 @@ from mycarapp.models import MyCar
 from django.core.files.storage import FileSystemStorage
 import datetime
 from SubCategoryApp.models import SubCategoryApp
+from CategoryApp.models import CategoryApp
 
 
 # Create your views here.
@@ -52,16 +53,25 @@ def suggest_add(request):
             filename = fs.save(myfile.name, myfile)
             url = fs.url(filename)
 
+
             if str(myfile.content_type).startswith('image'):
 
                 if myfile.size < 5000000 :
                     suggestname = SubCategoryApp.objects.get(pk=suggestid).name
+                    or_catid    = SubCategoryApp.objects.get(pk=suggestid).categoryid
 
                     data = Suggest(set_name = suggesttitle, name = suggestname,
                                    short_txt = suggestshort, body_txt = suggesttxt, catname = suggestname, catid = suggestid,
                                    date = today, picname = filename, picurl = url, writer = '-',
-                                   show = 0, time = time,)
+                                   show = 0, time = time, or_catid = or_catid)
                     data.save()
+
+                    count = len(Suggest.objects.filter(or_catid = or_catid))
+
+                    data = CategoryApp.objects.get(pk=or_catid)
+                    data.count = count
+                    data.save()
+
                     return redirect('suggest_list')
 
                 else:
@@ -138,7 +148,7 @@ def suggest_edit(request, pk):
                     data.name = suggesttitle
                     data.shor_txt = suggestshort
                     data.body_txt = suggesttxt
-                    data.picnanem = filename
+                    data.picname = filename
                     data.pcurl = url
                     data.catname = suggestname
                     data.catid = suggestid
