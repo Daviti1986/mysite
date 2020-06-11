@@ -19,39 +19,23 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ded3f7a7-fc7d-4d1d-9999-3c75c5ef4e10" name="Default Changelist" comment="edit is not work">
-      <change afterPath="$PROJECT_DIR$/CategoryApp/migrations/0002_categoryapp_count.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/suggestapp/migrations/0005_suggest_or_catid.py" afterDir="false" />
+    <list default="true" id="ded3f7a7-fc7d-4d1d-9999-3c75c5ef4e10" name="Default Changelist" comment="count">
+      <change afterPath="$PROJECT_DIR$/media/AO8I1343_aXHRM8p.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1350.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mycarapp/migrations/0010_auto_20200611_1629.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mycarapp/migrations/0011_auto_20200611_1740.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/setting.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mycarapp/templates/front/pages/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CategoryApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/CategoryApp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/AO8I1269.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/AO8I1281.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/AO8I1281_74x8vrq.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/AO8I1281_LpucBrs.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/AO8I1281_ebVcXiw.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/AO8I1281_hYqbjBO.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/AO8I1285.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/AO8I1286.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/AO8I1288.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/AO8I1323.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/AO8I1325.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/AO8I1325_7VJySZp.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/AO8I1325_X9LBKQG.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/AO8I1343_z6KNyCb.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/AO8I1343_v86im7c.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mycarapp/templates/back/pages/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/category.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mycarapp/templates/back/pages/category_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/category_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mycarapp/templates/back/pages/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CategoryApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/CategoryApp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SubCategoryApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/SubCategoryApp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mycarapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mycarapp/templates/back/pages/master.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/master.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mycarapp/templates/back/pages/sub_category.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/sub_category.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mycarapp/templates/back/pages/sub_category_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/sub_category_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mycarapp/templates/back/pages/suggest_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/suggest_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mycarapp/templates/back/pages/suggest_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/suggest_edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mycarapp/templates/back/pages/suggest_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/suggest_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mycarapp/templates/front/pages/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/front/pages/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mycarapp/templates/front/pages/master.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/front/pages/master.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mycarapp/templates/front/pages/suggest_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/front/pages/suggest_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mycarapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mycarapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/suggestapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/suggestapp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/suggestapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/suggestapp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/suggestapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/suggestapp/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -199,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591379008964</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="count">
+      <created>1591704918500</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1591704918500</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -224,7 +215,8 @@
     <MESSAGE value="delete" />
     <MESSAGE value="sub category" />
     <MESSAGE value="edit is not work" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit is not work" />
+    <MESSAGE value="count" />
+    <option name="LAST_COMMIT_MESSAGE" value="count" />
   </component>
   <component name="WindowStateProjectService">
     <state x="309" y="42" key="#Inspections" timestamp="1590323710674">
@@ -235,6 +227,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="442" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1590314889433" />
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog" timestamp="1591788310277">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="92" y="92" width="1182" height="544" key="DiffContextDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1591788310277" />
     <state x="462" y="119" key="FileChooserDialogImpl" timestamp="1590521439427">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -267,10 +263,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="9" key="SettingsEditor/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1590658375907" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1591272815641">
+    <state x="530" y="277" key="VCS.ChangelistChooser" timestamp="1591788289079">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1591272815641" />
+    <state x="530" y="277" key="VCS.ChangelistChooser/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1591788289079" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1591704928591">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1591704928591" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1591289094055">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

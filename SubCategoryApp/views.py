@@ -6,11 +6,23 @@ from CategoryApp.models import CategoryApp
 # Create your views here.
 def sub_category_list(request):
 
+
+    # login check start
+    if not request.user.is_authenticated:
+        return redirect('my_login')
+    # login check end
+
     subcategory = SubCategoryApp.objects.all()
 
     return render(request, 'back/pages/sub_category.html', {'subcategory':subcategory})
 
 def sub_category_add(request):
+
+
+    # login check start
+    if not request.user.is_authenticated:
+        return redirect('my_login')
+    # login check end
 
     categories = CategoryApp.objects.all()
 

@@ -17,10 +17,21 @@ def suggest_detail(request, word):
 
 def suggest_list(request):
 
+    # login check start
+    if not request.user.is_authenticated:
+        return redirect('my_login')
+    # login check end
+
     suggest = Suggest.objects.all()
     return render(request, 'back/pages/suggest_list.html', {'suggest': suggest })
 
 def suggest_add(request):
+
+
+    # login check start
+    if not request.user.is_authenticated:
+        return redirect('my_login')
+    # login check end
 
     now = datetime.datetime.now()
     year = now.year
@@ -96,11 +107,26 @@ def suggest_add(request):
 
 def suggest_delete(request, pk):
 
+
+    # login check start
+    if not request.user.is_authenticated:
+        return redirect('my_login')
+    # login check end
+
     try:
         delete = Suggest.objects.get(pk=pk)
         fs = FileSystemStorage()
         fs.delete(delete.picname)
+        orcatid = Suggest.objects.get(pk=pk).or_catid
+
         delete.delete()
+
+
+        count = len(Suggest.objects.filter(or_catid=orcatid))
+        Del = CategoryApp.objects.get(pk=orcatid)
+        Del.count = count
+        Del.save()
+
     except:
         error = "Something Wrong"
         return render(request, 'back/pages/error.html', {'error': error})
@@ -109,6 +135,12 @@ def suggest_delete(request, pk):
     return  redirect('suggest_list')
 
 def suggest_edit(request, pk):
+
+
+    # login check start
+    if not request.user.is_authenticated:
+        return redirect('my_login')
+    # login check end
 
     if len(Suggest.objects.filter(pk=pk)) == 0 :
         error = "News Not Found"

@@ -5,11 +5,20 @@ from .models import CategoryApp
 # Create your views here.
 def Category_list(request):
 
+    # login check start
+    if not request.user.is_authenticated:
+        return redirect('my_login')
+    # login check end
     category = CategoryApp.objects.all()
 
     return render(request, 'back/pages/category.html', {'category':category})
 
 def Category_add(request):
+
+    # login check start
+    if not request.user.is_authenticated:
+        return redirect('my_login')
+    # login check end
 
     if request.method == "POST":
 
@@ -30,6 +39,12 @@ def Category_add(request):
     return render(request, 'back/pages/category_add.html')
 
 def category_delete(request, pk):
+
+
+    # login check start
+    if not request.user.is_authenticated:
+        return redirect('my_login')
+    # login check end
 
     try:
         delete = CategoryApp.objects.get(pk=pk)
