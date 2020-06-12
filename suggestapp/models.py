@@ -18,6 +18,7 @@ class Suggest(models.Model):
     catid     = models.IntegerField(default=0)
     or_catid = models.IntegerField(default=0)
     show      = models.IntegerField(default=0)
+    tag = models.TextField(default='')
 
     def __str__(self):
         return self.set_name + ' | ' + str (self.pk)

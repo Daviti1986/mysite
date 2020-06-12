@@ -19,23 +19,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ded3f7a7-fc7d-4d1d-9999-3c75c5ef4e10" name="Default Changelist" comment="count">
-      <change afterPath="$PROJECT_DIR$/media/AO8I1343_aXHRM8p.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1350.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mycarapp/migrations/0010_auto_20200611_1629.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mycarapp/migrations/0011_auto_20200611_1740.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/setting.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mycarapp/templates/front/pages/login.html" afterDir="false" />
+    <list default="true" id="ded3f7a7-fc7d-4d1d-9999-3c75c5ef4e10" name="Default Changelist" comment="setting">
+      <change afterPath="$PROJECT_DIR$/suggestapp/migrations/0006_suggest_tag.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CategoryApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/CategoryApp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SubCategoryApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/SubCategoryApp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mycarapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mycarapp/templates/back/pages/master.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/master.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mycarapp/templates/back/pages/suggest_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/suggest_add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mycarapp/templates/back/pages/suggest_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/suggest_edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mycarapp/templates/front/pages/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/front/pages/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mycarapp/templates/front/pages/master.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/front/pages/master.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mycarapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mycarapp/templates/front/pages/suggest_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/front/pages/suggest_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mycarapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/suggestapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/suggestapp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/suggestapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/suggestapp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/suggestapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/suggestapp/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -190,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591704918500</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="setting">
+      <created>1591886535032</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1591886535032</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -216,7 +216,8 @@
     <MESSAGE value="sub category" />
     <MESSAGE value="edit is not work" />
     <MESSAGE value="count" />
-    <option name="LAST_COMMIT_MESSAGE" value="count" />
+    <MESSAGE value="setting" />
+    <option name="LAST_COMMIT_MESSAGE" value="setting" />
   </component>
   <component name="WindowStateProjectService">
     <state x="309" y="42" key="#Inspections" timestamp="1590323710674">
@@ -267,10 +268,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="530" y="277" key="VCS.ChangelistChooser/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1591788289079" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1591704928591">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1591886547166">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1591704928591" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1591886547166" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1591289094055">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

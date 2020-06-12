@@ -10,10 +10,29 @@ from CategoryApp.models import CategoryApp
 # Create your views here.
 def suggest_detail(request, word):
     site = MyCar.objects.get(pk=2)
-    suggest = Suggest.objects.filter(name=word)
+    suggest = Suggest.objects.all().order_by('-pk')
+    cat = CategoryApp.objects.all()
+    subcat = SubCategoryApp.objects.all()
+    lastsuggest = Suggest.objects.all().order_by('-pk')[:3]
 
+    showsuggest = Suggest.objects.filter(name=word)
+    popsuggest = Suggest.objects.all().order_by('-show')
+    popsuggestlimit = Suggest.objects.all().order_by('-show')[:3]
+    tagname = Suggest.objects.get(name=word).tag
+    tag = tagname.split(',')
 
-    return render(request, 'front/pages/suggest_detail.html', {'suggest': suggest, 'site': site })
+    try:
+        mysuggest = Suggest.objects.get(name=word)
+        mysuggest.show = mysuggest.show +1
+        mysuggest.save()
+    except:
+        print("Can't Add show ")
+
+    return render(request, 'front/pages/suggest_detail.html', {'site':site, 'suggest':suggest,
+                                                               'cat':cat, 'subcat': subcat, 'lastsuggest': lastsuggest,
+                                                               'showsuggest': showsuggest, 'popsuggest': popsuggest,
+                                                               'popsuggestlimit': popsuggestlimit,
+                                                               'tag': tag})
 
 def suggest_list(request):
 
@@ -53,6 +72,7 @@ def suggest_add(request):
         suggestshort = request.POST.get('suggestshort')
         suggesttxt   = request.POST.get('suggesttxt')
         suggestid    = request.POST.get('suggestcat')
+        tag          = request.POST.get('tag')
 
         if suggesttitle == '' or suggestname == '' or suggestcat == '' or suggestshort == '' or suggesttxt == '':
             error = 'ALL Fields Requirded'
@@ -74,7 +94,7 @@ def suggest_add(request):
                     data = Suggest(set_name = suggesttitle, name = suggestname,
                                    short_txt = suggestshort, body_txt = suggesttxt, catname = suggestname, catid = suggestid,
                                    date = today, picname = filename, picurl = url, writer = '-',
-                                   show = 0, time = time, or_catid = or_catid)
+                                   show = 0, time = time, or_catid = or_catid, tag = tag)
                     data.save()
 
                     count = len(Suggest.objects.filter(or_catid = or_catid))
@@ -156,6 +176,7 @@ def suggest_edit(request, pk):
         suggestshort = request.POST.get('suggestshort')
         suggesttxt   = request.POST.get('suggesttxt')
         suggestid    = request.POST.get('suggestcat')
+        tag          = request.POST.get('tag')
 
         if suggesttitle == '' or suggestname == '' or suggestcat == '' or suggestshort == '' or suggesttxt == '':
             error = 'ALL Fields Requirded'
@@ -184,6 +205,7 @@ def suggest_edit(request, pk):
                     data.pcurl = url
                     data.catname = suggestname
                     data.catid = suggestid
+                    data.tag = tag
 
                     data.save()
                     return redirect('suggest_list')
@@ -212,6 +234,7 @@ def suggest_edit(request, pk):
             data.body_txt = suggesttxt
             data.catname = suggestname
             data.catid = suggestid
+            data.tag = tag
 
             data.save()
             return redirect('suggest_list')

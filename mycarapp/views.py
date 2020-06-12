@@ -15,9 +15,11 @@ def home(request):
     cat = CategoryApp.objects.all()
     subcat = SubCategoryApp.objects.all()
     lastsuggest = Suggest.objects.all().order_by('-pk')[:3]
-
+    popsuggest = Suggest.objects.all().order_by('-show')
+    popsuggestlimit = Suggest.objects.all().order_by('-show')[:3]
     return render(request, 'front/pages/home.html', {'site':site, 'suggest':suggest, 'cat':cat, 'subcat': subcat,
-                                                     'lastsuggest':lastsuggest})
+                                                     'lastsuggest':lastsuggest, 'popsuggest':popsuggest,
+                                                     'popsuggestlimit': popsuggestlimit})
 
 
 def about(request):
