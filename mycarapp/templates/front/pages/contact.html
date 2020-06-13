@@ -2,22 +2,24 @@
 {% load staticfiles %}
 
 {% block headblock %}
-<title>{{ site.name }} | About</title>
+<title>{{ site.name }} | Contact</title>
 {% endblock %}
 
 
 
 {% block mainblock %}
-<!-- Breadcrumb -->
+
+
+	<!-- Breadcrumb -->
 	<div class="container">
 		<div class="headline bg0 flex-wr-sb-c p-rl-20 p-tb-8">
 			<div class="f2-s-1 p-r-30 m-tb-6">
-				<a href="index.html" class="breadcrumb-item f1-s-3 cl9">
+				<a href="/" class="breadcrumb-item f1-s-3 cl9">
 					Home
 				</a>
 
 				<span class="breadcrumb-item f1-s-3 cl9">
-					About Us
+					Contact Us
 				</span>
 			</div>
 
@@ -31,29 +33,37 @@
 	</div>
 
 	<!-- Page heading -->
-	<div class="container p-t-4 p-b-35">
+	<div class="container p-t-4 p-b-40">
 		<h2 class="f1-l-1 cl2">
-			About Us
+			Contact Us
 		</h2>
 	</div>
 
 	<!-- Content -->
-	<section class="bg0 p-b-110">
+	<section class="bg0 p-b-60">
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-md-7 col-lg-8 p-b-30">
+				<div class="col-md-7 col-lg-8 p-b-80">
 					<div class="p-r-10 p-r-0-sr991">
-						<p class="f1-s-11 cl6 p-b-25">
-							{{site.abouttxt|safe}}
-						</p>
+						<form action="{% url 'contact_add' %}" method="POST">
+							{% csrf_token %}
+							<input class="bo-1-rad-3 bocl13 size-a-19 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="name" placeholder="Name*">
+
+							<input class="bo-1-rad-3 bocl13 size-a-19 f1-s-13 cl5 plh6 p-rl-18 m-b-20" type="text" name="email" placeholder="Email*">
 
 
+							<textarea class="bo-1-rad-3 bocl13 size-a-15 f1-s-13 cl5 plh6 p-rl-18 p-tb-14 m-b-20" name="txt" placeholder="Your Message"></textarea>
+
+							<button type="submit" class="size-a-20 bg2 borad-3 f1-s-12 cl0 hov-btn1 trans-03 p-rl-15 m-t-20">
+								Send
+							</button>
+						</form>
 					</div>
 				</div>
 
 				<!-- Sidebar -->
-				<div class="col-md-5 col-lg-4 p-b-30">
-					<div class="p-l-10 p-rl-0-sr991 p-t-5">
+				<div class="col-md-5 col-lg-4 p-b-80">
+					<div class="p-l-10 p-rl-0-sr991">
 						<!-- Popular Posts -->
 						<div>
 							<div class="how2 how2-cl4 flex-s-c">
@@ -61,9 +71,8 @@
 									Popular Post
 								</h3>
 							</div>
-
+                            {% for pop in popsuggestlimit %}
 							<ul class="p-t-35">
-								{% for pop in popsuggestlimit %}
 								<li class="flex-wr-sb-s p-b-30">
 									<a href="{% url 'suggest_detail' word=pop.name %}" class="size-w-10 wrap-pic-w hov1 trans-03">
 										<img src="{{pop.picurl}}" alt="IMG">
@@ -72,7 +81,7 @@
 									<div class="size-w-11">
 										<h6 class="p-b-4">
 											<a href="{% url 'suggest_detail' word=pop.name %}" class="f1-s-5 cl3 hov-cl10 trans-03">
-												{{pop.name}}
+                                                {{pop.name}}
 											</a>
 										</h6>
 
@@ -91,7 +100,8 @@
 										</span>
 									</div>
 								</li>
-								{% endfor %}
+                            {% endfor %}
+
 							</ul>
 						</div>
 					</div>

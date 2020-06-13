@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'suggestapp',
     'CategoryApp',
     'SubCategoryApp',
+    'ContactFormApp'
 
 ]
 

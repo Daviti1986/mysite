@@ -47,6 +47,7 @@ def suggest_list(request):
 def suggest_add(request):
 
 
+
     # login check start
     if not request.user.is_authenticated:
         return redirect('my_login')

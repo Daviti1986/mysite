@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'', include('suggestapp.urls')),
     url(r'', include('CategoryApp.urls')),
     url(r'', include('SubCategoryApp.urls')),
+    url(r'', include('ContactFormApp.urls')),
 ]
 
 if settings.DEBUG:

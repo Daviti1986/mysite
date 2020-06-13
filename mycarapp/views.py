@@ -24,7 +24,14 @@ def home(request):
 
 def about(request):
     site = MyCar.objects.get(pk = 2)
-    return render(request, 'front/pages/about.html', {'site':site})
+    suggest = Suggest.objects.all().order_by('-pk')
+    cat = CategoryApp.objects.all()
+    subcat = SubCategoryApp.objects.all()
+    lastsuggest = Suggest.objects.all().order_by('-pk')[:3]
+    popsuggestlimit = Suggest.objects.all().order_by('-show')[:3]
+    return render(request, 'front/pages/about.html', {'site':site, 'suggest':suggest, 'cat':cat, 'subcat': subcat,
+                                                     'lastsuggest':lastsuggest,
+                                                     'popsuggestlimit': popsuggestlimit})
 
 def panel(request):
     # login check start
@@ -129,6 +136,42 @@ def site_setting(request):
 
     site = MyCar.objects.get(pk=2)
     return render(request, 'back/pages/setting.html', {'site': site})
+
+def about_setting(request):
+    # login check start
+    if not request.user.is_authenticated:
+        return redirect('my_login')
+    # login check end
+
+    if request.method == 'POST':
+        txt = request.POST.get('txt')
+
+        if txt == '':
+            error = 'ALL Fields Requirded'
+            return render(request, 'back/pages/error.html', {'error': error})
+        data = MyCar.objects.get(pk=2)
+        data.abouttxt = txt
+        data.save()
+
+    about = MyCar.objects.get(pk=2).abouttxt
+
+
+
+    return render(request, 'back/pages/about_setting.html', {'about': about})
+
+def contact(request):
+    site = MyCar.objects.get(pk=2)
+    suggest = Suggest.objects.all().order_by('-pk')
+    cat = CategoryApp.objects.all()
+    subcat = SubCategoryApp.objects.all()
+    lastsuggest = Suggest.objects.all().order_by('-pk')[:3]
+    popsuggestlimit = Suggest.objects.all().order_by('-show')[:3]
+
+
+    return render(request, 'front/pages/contact.html', {'site':site, 'suggest':suggest, 'cat':cat, 'subcat': subcat,
+                                                     'lastsuggest':lastsuggest,
+                                                     'popsuggestlimit': popsuggestlimit})
+
 
 
 

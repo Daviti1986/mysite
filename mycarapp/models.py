@@ -13,6 +13,7 @@ class MyCar(models.Model):
     Tell     = models.CharField(default= '-', max_length=30 )
     Link     = models.CharField(default= '-', max_length=30 )
     about    = models.TextField()
+    abouttxt = models.TextField(default='')
 
     picurl = models.TextField(default='')
     picname = models.TextField(default='')
