@@ -134,6 +134,13 @@ def site_setting(request):
         return redirect('my_login')
     # login check end
 
+    perm = 0
+    for i in request.user.groups.all():
+        if i.name == "masteruser": perm = 1
+    if perm == 0:
+        error = 'Access Denied'
+        return render(request, 'back/pages/error.html', {'error': error})
+
 
 
     if request.method == 'POST':
@@ -210,6 +217,13 @@ def about_setting(request):
     if not request.user.is_authenticated:
         return redirect('my_login')
     # login check end
+
+    perm = 0
+    for i in request.user.groups.all():
+        if i.name == "masteruser": perm = 1
+    if perm == 0:
+        error = 'Access Denied'
+        return render(request, 'back/pages/error.html', {'error': error})
 
     if request.method == 'POST':
         txt = request.POST.get('txt')
