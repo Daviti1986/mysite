@@ -5,6 +5,7 @@ from django.core.files.storage import FileSystemStorage
 import datetime
 from SubCategoryApp.models import SubCategoryApp
 from CategoryApp.models import CategoryApp
+from TrendingApp.models import TrendingApp
 
 
 # Create your views here.
@@ -18,6 +19,8 @@ def suggest_detail(request, word):
     showsuggest = Suggest.objects.filter(name=word)
     popsuggest = Suggest.objects.all().order_by('-show')
     popsuggestlimit = Suggest.objects.all().order_by('-show')[:3]
+    trending = TrendingApp.objects.all().order_by('-pk')[:5]
+
     tagname = Suggest.objects.get(name=word).tag
     tag = tagname.split(',')
 
@@ -32,7 +35,7 @@ def suggest_detail(request, word):
                                                                'cat':cat, 'subcat': subcat, 'lastsuggest': lastsuggest,
                                                                'showsuggest': showsuggest, 'popsuggest': popsuggest,
                                                                'popsuggestlimit': popsuggestlimit,
-                                                               'tag': tag})
+                                                               'tag': tag, 'trending': trending})
 
 def suggest_list(request):
 

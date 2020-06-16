@@ -5,6 +5,11 @@ from CategoryApp.models import CategoryApp
 from SubCategoryApp.models import SubCategoryApp
 from django.contrib.auth import authenticate, login, logout
 from django.core.files.storage import FileSystemStorage
+from TrendingApp.models import TrendingApp
+from django.contrib.auth.models import User
+from ManagerApp.models import ManagerApp
+import random
+from random import randint
 
 
 # Create your views here.
@@ -17,9 +22,14 @@ def home(request):
     lastsuggest = Suggest.objects.all().order_by('-pk')[:3]
     popsuggest = Suggest.objects.all().order_by('-show')
     popsuggestlimit = Suggest.objects.all().order_by('-show')[:3]
+    trending = TrendingApp.objects.all().order_by('-pk')[:5]
+
+    random_object = TrendingApp.objects.all()[randint(0, len(trending) -1)]
+    print(random_object)
+
     return render(request, 'front/pages/home.html', {'site':site, 'suggest':suggest, 'cat':cat, 'subcat': subcat,
                                                      'lastsuggest':lastsuggest, 'popsuggest':popsuggest,
-                                                     'popsuggestlimit': popsuggestlimit})
+                                                     'popsuggestlimit': popsuggestlimit, 'trending': trending})
 
 
 def about(request):
@@ -29,9 +39,10 @@ def about(request):
     subcat = SubCategoryApp.objects.all()
     lastsuggest = Suggest.objects.all().order_by('-pk')[:3]
     popsuggestlimit = Suggest.objects.all().order_by('-show')[:3]
+    trending = TrendingApp.objects.all().order_by('-pk')[:5]
     return render(request, 'front/pages/about.html', {'site':site, 'suggest':suggest, 'cat':cat, 'subcat': subcat,
                                                      'lastsuggest':lastsuggest,
-                                                     'popsuggestlimit': popsuggestlimit})
+                                                     'popsuggestlimit': popsuggestlimit, 'trending': trending})
 
 def panel(request):
     # login check start
@@ -55,10 +66,67 @@ def my_login(request):
 
     return render(request, 'front/pages/login.html')
 
+def my_register(request):
+
+    if request.method == 'POST':
+        uname = request.POST.get('user-name')
+        ufirstname = request.POST.get('register-firstname')
+        ulastname = request.POST.get('register-lastname')
+        uage = request.POST.get('register-age')
+        uemail = request.POST.get('register-email')
+        upass = request.POST.get('register-password')
+        uchpass = request.POST.get('register-password-verify')
+
+        if ufirstname == '' and ulastname == '' and uage == '':
+            msg = 'Your Pass Did not Match'
+            return render(request, 'front/pages/msgbox.html', {'msg': msg})
+
+        if upass != uchpass :
+            msg = 'Your Pass Did not Match'
+            return render(request, 'front/pages/msgbox.html', {'msg': msg})
+        count1 = 0
+        count2 = 0
+        count3 = 0
+        count4 = 0
+        for i in upass:
+
+            if i > '0' and i < '9':
+                count1 = 1
+            if i > 'A' and i < 'Z':
+                count2 = 1
+            if i > 'a' and i < 'z':
+                count3 = 1
+            if i > '!' and i < '(':
+                count4 = 1
+
+        if count1 == 0 or count2 == 0 or count3 == 0 or count4 == 0 :
+            msg = 'Your Pass IS Not Strong'
+            return render(request, 'front/pages/msgbox.html', {'msg': msg})
+
+        if len(upass) < 8 :
+            msg = 'Your Pass Most Be 8 Character'
+            return render(request, 'front/pages/msgbox.html', {'msg': msg})
+        if len(User.objects.filter(username = uname)) == 0 and len(User.objects.filter(email = uemail)) == 0 :
+            user = User.objects.create_user(username=uname, email= uemail, password=upass)
+            data = ManagerApp(name=ufirstname, usertxt= uname, email = uemail, age = uage, lastname = ulastname )
+            data.save()
+
+    return render(request, 'front/pages/login.html')
+
 def my_logout(request):
 
-    logout(request)
-    return redirect('my_login')
+    if request.method == 'POST':
+        user = request.POST.get('username')
+        password = request.POST.get('password')
+
+        if user == '' or password == '' :
+            user = authenticate(username= user, password = password)
+            if user != None :
+
+                login(request, user)
+                return redirect('panel')
+
+
 
 def site_setting(request):
     # login check start
@@ -166,11 +234,69 @@ def contact(request):
     subcat = SubCategoryApp.objects.all()
     lastsuggest = Suggest.objects.all().order_by('-pk')[:3]
     popsuggestlimit = Suggest.objects.all().order_by('-show')[:3]
+    trending = TrendingApp.objects.all().order_by('-pk')[:5]
+
 
 
     return render(request, 'front/pages/contact.html', {'site':site, 'suggest':suggest, 'cat':cat, 'subcat': subcat,
                                                      'lastsuggest':lastsuggest,
-                                                     'popsuggestlimit': popsuggestlimit})
+                                                     'popsuggestlimit': popsuggestlimit, 'trending': trending})
+
+
+def change_pass(request):
+    # login check start
+    if not request.user.is_authenticated:
+        return redirect('my_login')
+    # login check end
+
+    if request.method == 'POST':
+
+        oldpass = request.POST.get('oldpass')
+        newpass = request.POST.get('newpass')
+
+        if oldpass == '' or newpass == '':
+            error = 'ALL Fields Requirded'
+            return render(request, 'back/pages/error.html', {'error': error})
+        user = authenticate(username=request.user, password=oldpass)
+
+        if user != None:
+
+            if len(newpass) < 8 :
+                error = 'Your Password Most Be AT less 8 Character'
+                return render(request, 'back/pages/error.html', {'error': error})
+
+            count1  = 0
+            count2 = 0
+            count3 = 0
+            count4 = 0
+            for i in newpass:
+
+                if i > '0' and i < '9' :
+                    count1 = 1
+                if i > 'A' and i < 'Z' :
+                    count2 = 1
+                if i > 'a' and i < 'z' :
+                    count3 = 1
+                if i > '!' and i < '(':
+                    count4 = 1
+
+            print('count', count1, count2, count3, count4)
+            if  count1 == 1 and count2 == 1 and count3 == 1 and count4 == 1 :
+
+                user = User.objects.get(username= request.user)
+                user.set_password(newpass)
+                user.save()
+                return redirect('my_logout')
+
+
+        else:
+            error = 'Your Password Is Not Correct'
+            return render(request, 'back/pages/error.html', {'error': error})
+
+
+
+
+    return render(request, 'back/pages/changepass.html')
 
 
 

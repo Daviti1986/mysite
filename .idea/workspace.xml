@@ -19,34 +19,34 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ded3f7a7-fc7d-4d1d-9999-3c75c5ef4e10" name="Default Changelist" comment="tags">
-      <change afterPath="$PROJECT_DIR$/ContactFormApp/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ContactFormApp/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ContactFormApp/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ContactFormApp/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ContactFormApp/migrations/0002_auto_20200613_2212.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ContactFormApp/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ContactFormApp/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ContactFormApp/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ContactFormApp/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ContactFormApp/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/logo-01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/logo-01_6swtM8j.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/logo-01_JA8XdHT.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/logo-01_hbWWS9y.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/logo-02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/logo-02_41VGDkL.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/logo-02_8q8q7hy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/logo-02_QT8svOp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mycarapp/migrations/0012_mycar_abouttxt.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/about_setting.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/contact_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mycarapp/templates/front/pages/contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mycarapp/templates/front/pages/msgbox.html" afterDir="false" />
+    <list default="true" id="ded3f7a7-fc7d-4d1d-9999-3c75c5ef4e10" name="Default Changelist" comment="contact">
+      <change afterPath="$PROJECT_DIR$/ManagerApp/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ManagerApp/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ManagerApp/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ManagerApp/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ManagerApp/migrations/0002_managerapp_email.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ManagerApp/migrations/0003_auto_20200616_1201.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ManagerApp/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ManagerApp/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ManagerApp/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ManagerApp/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ManagerApp/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrendingApp/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrendingApp/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrendingApp/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrendingApp/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrendingApp/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrendingApp/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrendingApp/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrendingApp/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TrendingApp/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/changepass.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/manager_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/trending.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/trending_edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mycarapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mycarapp/templates/back/pages/master.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/master.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mycarapp/templates/front/pages/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/front/pages/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mycarapp/templates/front/pages/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/front/pages/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mycarapp/templates/front/pages/master.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/front/pages/master.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mycarapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mycarapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/views.py" afterDir="false" />
@@ -220,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591953223547</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="contact">
+      <created>1592072809090</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1592072809090</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -248,7 +255,8 @@
     <MESSAGE value="count" />
     <MESSAGE value="setting" />
     <MESSAGE value="tags" />
-    <option name="LAST_COMMIT_MESSAGE" value="tags" />
+    <MESSAGE value="contact" />
+    <option name="LAST_COMMIT_MESSAGE" value="contact" />
   </component>
   <component name="WindowStateProjectService">
     <state x="309" y="42" key="#Inspections" timestamp="1590323710674">
@@ -299,10 +307,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="530" y="277" key="VCS.ChangelistChooser/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1591788289079" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1591953237927">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1592072821580">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1591953237927" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1592072821580" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1591289094055">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

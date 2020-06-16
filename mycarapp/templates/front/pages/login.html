@@ -146,23 +146,40 @@
                             <!-- END Reminder Form -->
 
                             <!-- Register Form -->
-                            <form action="login_alt.html#register" method="post" id="form-register" class="form-horizontal display-none">
+                            <form action="{% url 'my_register' %}" method="post" id="form-register" class="form-horizontal display-none">
+                                {% csrf_token %}
                                 <div class="form-group">
+                                    <div class="col-xs-6">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="gi gi-user"></i></span>
+                                            <input type="text" id="user-name" name="user-name" class="form-control input-lg" placeholder="Username" required>
+                                        </div>
+                                    </div>
+
                                     <div class="col-xs-6">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="gi gi-user"></i></span>
                                             <input type="text" id="register-firstname" name="register-firstname" class="form-control input-lg" placeholder="Firstname">
                                         </div>
                                     </div>
+
+
+
+                                </div>
+                                <div class="form-group">
+
                                     <div class="col-xs-6">
                                         <input type="text" id="register-lastname" name="register-lastname" class="form-control input-lg" placeholder="Lastname">
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <input type="text" id="register-age" name="register-age" class="form-control input-lg" placeholder="age">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-xs-12">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="gi gi-envelope"></i></span>
-                                            <input type="text" id="register-email" name="register-email" class="form-control input-lg" placeholder="Email">
+                                            <input type="text" id="register-email" name="register-email" class="form-control input-lg" placeholder="Email" required>
                                         </div>
                                     </div>
                                 </div>
@@ -170,7 +187,7 @@
                                     <div class="col-xs-12">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
-                                            <input type="password" id="register-password" name="register-password" class="form-control input-lg" placeholder="Password">
+                                            <input type="password" id="register-password" name="register-password" class="form-control input-lg" placeholder="Password" required>
                                         </div>
                                     </div>
                                 </div>
@@ -178,7 +195,7 @@
                                     <div class="col-xs-12">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
-                                            <input type="password" id="register-password-verify" name="register-password-verify" class="form-control input-lg" placeholder="Verify Password">
+                                            <input type="password" id="register-password-verify" name="register-password-verify" class="form-control input-lg" placeholder="Verify Password" required>
                                         </div>
                                     </div>
                                 </div>
@@ -186,7 +203,7 @@
                                     <div class="col-xs-6">
                                         <a href="#modal-terms" data-toggle="modal" class="register-terms">Terms</a>
                                         <label class="switch switch-primary" data-toggle="tooltip" title="Agree to the terms">
-                                            <input type="checkbox" id="register-terms" name="register-terms">
+                                            <input type="checkbox" id="register-terms" name="register-terms" required>
                                             <span></span>
                                         </label>
                                     </div>
