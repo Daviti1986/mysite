@@ -19,18 +19,25 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ded3f7a7-fc7d-4d1d-9999-3c75c5ef4e10" name="Default Changelist" comment="user">
-      <change afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/manager_group.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/users_groups.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mycarapp/templatetags/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mycarapp/templatetags/extera_auth.py" afterDir="false" />
+    <list default="true" id="ded3f7a7-fc7d-4d1d-9999-3c75c5ef4e10" name="Default Changelist" comment="group">
+      <change afterPath="$PROJECT_DIR$/media/AO8I1343_bF0Cdoa.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1375.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/groups_permissions.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/manager_permissions.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/users_permissions.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/suggestapp/migrations/0007_suggest_act.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ManagerApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ManagerApp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ManagerApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ManagerApp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mycarapp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/AO8I1343_DBcZCqX.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mycarapp/templates/back/pages/manager_group.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/manager_group.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mycarapp/templates/back/pages/manager_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/manager_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mycarapp/templates/back/pages/master.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/master.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mycarapp/templates/back/pages/suggest_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/suggest_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mycarapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/suggestapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/suggestapp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/suggestapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/suggestapp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/suggestapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/suggestapp/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +47,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -212,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592298794638</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="group">
+      <created>1592330250176</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1592330250176</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -242,7 +256,8 @@
     <MESSAGE value="tags" />
     <MESSAGE value="contact" />
     <MESSAGE value="user" />
-    <option name="LAST_COMMIT_MESSAGE" value="user" />
+    <MESSAGE value="group" />
+    <option name="LAST_COMMIT_MESSAGE" value="group" />
   </component>
   <component name="WindowStateProjectService">
     <state x="309" y="42" key="#Inspections" timestamp="1590323710674">
@@ -293,10 +308,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="530" y="277" key="VCS.ChangelistChooser/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1591788289079" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1592298806018">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1592330258732">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1592298806018" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1592330258732" />
+    <state width="600" height="428" key="javadoc.popup" timestamp="1592381481337">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="600" height="428" key="javadoc.popup/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1592381481337" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1591289094055">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

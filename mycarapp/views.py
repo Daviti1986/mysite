@@ -6,7 +6,7 @@ from SubCategoryApp.models import SubCategoryApp
 from django.contrib.auth import authenticate, login, logout
 from django.core.files.storage import FileSystemStorage
 from TrendingApp.models import TrendingApp
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group, Permission
 from ManagerApp.models import ManagerApp
 import random
 from random import randint
@@ -16,12 +16,12 @@ from random import randint
 
 def home(request):
     site = MyCar.objects.get(pk = 2)
-    suggest = Suggest.objects.all().order_by('-pk')
+    suggest = Suggest.objects.filter(act=1).order_by('-pk')
     cat = CategoryApp.objects.all()
     subcat = SubCategoryApp.objects.all()
-    lastsuggest = Suggest.objects.all().order_by('-pk')[:3]
-    popsuggest = Suggest.objects.all().order_by('-show')
-    popsuggestlimit = Suggest.objects.all().order_by('-show')[:3]
+    lastsuggest = Suggest.objects.filter(act=1).order_by('-pk')[:3]
+    popsuggest = Suggest.objects.filter(act=1).order_by('-show')
+    popsuggestlimit = Suggest.objects.filter(act=1).order_by('-show')[:3]
     trending = TrendingApp.objects.all().order_by('-pk')[:5]
 
     random_object = TrendingApp.objects.all()[randint(0, len(trending) -1)]
@@ -49,7 +49,18 @@ def panel(request):
     if not request.user.is_authenticated :
         return redirect('my_login')
     # login check end
+
+    perm = 0
+    perm = Permission.objects.filter(user=request.user)
+    for i in perm :
+        if i.codename == 'masteruser' :
+            perm = 1
+
+
     return render(request, 'back/pages/home.html')
+
+
+
 
 def my_login(request):
     if request.method == 'POST':

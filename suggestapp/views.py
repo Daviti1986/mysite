@@ -44,7 +44,14 @@ def suggest_list(request):
         return redirect('my_login')
     # login check end
 
-    suggest = Suggest.objects.all()
+    perm = 0
+    for i in request.user.groups.all():
+        if i.name == "masteruser": perm = 1
+    if perm == 0:
+        suggest = Suggest.objects.filter(writer=request.user)
+    elif perm == 1 :
+        suggest = Suggest.objects.all()
+
     return render(request, 'back/pages/suggest_list.html', {'suggest': suggest })
 
 def suggest_add(request):
@@ -97,7 +104,7 @@ def suggest_add(request):
 
                     data = Suggest(set_name = suggesttitle, name = suggestname,
                                    short_txt = suggestshort, body_txt = suggesttxt, catname = suggestname, catid = suggestid,
-                                   date = today, picname = filename, picurl = url, writer = '-',
+                                   date = today, picname = filename, picurl = url, writer =request.user,
                                    show = 0, time = time, or_catid = or_catid, tag = tag)
                     data.save()
 
@@ -137,6 +144,15 @@ def suggest_delete(request, pk):
         return redirect('my_login')
     # login check end
 
+    perm = 0
+    for i in request.user.groups.all():
+        if i.name == "masteruser": perm = 1
+    if perm == 0:
+        master = Suggest.objects.get(pk=pk).writer
+        if str(master) != str(request.user) :
+            error = 'Access Denied'
+            return render(request, 'back/pages/error.html', {'error': error})
+
     try:
         delete = Suggest.objects.get(pk=pk)
         fs = FileSystemStorage()
@@ -169,6 +185,15 @@ def suggest_edit(request, pk):
     if len(Suggest.objects.filter(pk=pk)) == 0 :
         error = "News Not Found"
         return render(request, 'back/pages/error.html', {'error': error})
+
+    perm = 0
+    for i in request.user.groups.all():
+        if i.name == "masteruser": perm = 1
+    if perm == 0:
+        master = Suggest.objects.get(pk=pk).writer
+        if str(master) != str(request.user):
+            error = 'Access Denied'
+            return render(request, 'back/pages/error.html', {'error': error})
 
     suggest = Suggest.objects.get(pk=pk)
     cat = SubCategoryApp.objects.all()
@@ -210,6 +235,8 @@ def suggest_edit(request, pk):
                     data.catname = suggestname
                     data.catid = suggestid
                     data.tag = tag
+                    data.act = 0
+
 
                     data.save()
                     return redirect('suggest_list')
@@ -245,3 +272,19 @@ def suggest_edit(request, pk):
 
 
     return render(request, 'back/pages/suggest_edit.html', {'pk': pk, 'suggest': suggest, 'cat': cat})
+
+def suggest_publish(request, pk):
+
+
+    # login check start
+    if not request.user.is_authenticated:
+        return redirect('my_login')
+    # login check end
+
+    suggest = Suggest.objects.get(pk=pk)
+    suggest.act = 1
+    suggest.save()
+
+
+
+    return  redirect('suggest_list')

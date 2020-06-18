@@ -67,8 +67,8 @@
 
                 <td class="text-center">
                     <div class="btn-group">
-                        <a href="" data-toggle="tooltip" title="Edit" class="btn btn-xs btn-default"><i class="fa fa-pencil"></i></a>
-                        <a href="{% url 'manager_group_delete' name=cc.name %}" data-toggle="tooltip" title="Delete" class="btn btn-xs btn-danger"><i class="fa fa-times"></i></a>
+                        <a href="{% url 'groups_permissions' name=cc.name %}" data-toggle="tooltip" title="Perms" class="btn btn-xs btn-default"><i class="fa fa-pencil"></i>Perms</a>
+                        <a href="{% url 'manager_group_delete' name=cc.name %}" data-toggle="tooltip" title="Delete" class="btn btn-xs btn-danger"><i class="fa fa-times"></i>Delete</a>
                     </div>
                 </td>
             </tr>
