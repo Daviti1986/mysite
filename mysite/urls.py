@@ -28,6 +28,8 @@ urlpatterns = [
     url(r'', include('ContactFormApp.urls')),
     url(r'', include('TrendingApp.urls')),
     url(r'', include('ManagerApp.urls')),
+    url(r'', include('NewsLetterApp.urls')),
+    url(r'', include('CommentApp.urls')),
 ]
 
 if settings.DEBUG:

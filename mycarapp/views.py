@@ -8,8 +8,10 @@ from django.core.files.storage import FileSystemStorage
 from TrendingApp.models import TrendingApp
 from django.contrib.auth.models import User, Group, Permission
 from ManagerApp.models import ManagerApp
+import string
 import random
 from random import randint
+
 
 
 # Create your views here.
@@ -24,8 +26,6 @@ def home(request):
     popsuggestlimit = Suggest.objects.filter(act=1).order_by('-show')[:3]
     trending = TrendingApp.objects.all().order_by('-pk')[:5]
 
-    random_object = TrendingApp.objects.all()[randint(0, len(trending) -1)]
-    print(random_object)
 
     return render(request, 'front/pages/home.html', {'site':site, 'suggest':suggest, 'cat':cat, 'subcat': subcat,
                                                      'lastsuggest':lastsuggest, 'popsuggest':popsuggest,
@@ -55,6 +55,23 @@ def panel(request):
     for i in perm :
         if i.codename == 'masteruser' :
             perm = 1
+    '''''
+    test= ['!', '@', '#', '$', '%']
+    rand = ''
+    for i in range(4):
+        rand = rand + random.choice(string.ascii_letters )
+        rand += random.choice(test)
+        rand += str(random.randint(0,9))
+    
+
+
+    count = Suggest.objects.count()
+    rand = Suggest.objects.all()[random.randint(0, count-1)]
+    '''
+
+
+
+
 
 
     return render(request, 'back/pages/home.html')

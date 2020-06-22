@@ -19,22 +19,92 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ded3f7a7-fc7d-4d1d-9999-3c75c5ef4e10" name="Default Changelist" comment="group">
-      <change afterPath="$PROJECT_DIR$/media/AO8I1343_bF0Cdoa.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1375.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/groups_permissions.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/manager_permissions.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/users_permissions.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/suggestapp/migrations/0007_suggest_act.py" afterDir="false" />
+    <list default="true" id="ded3f7a7-fc7d-4d1d-9999-3c75c5ef4e10" name="Default Changelist" comment="publish">
+      <change afterPath="$PROJECT_DIR$/CommentApp/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CommentApp/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CommentApp/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CommentApp/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CommentApp/migrations/0002_comment_status.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CommentApp/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CommentApp/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CommentApp/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CommentApp/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CommentApp/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ManagerApp/migrations/0004_auto_20200620_1833.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ManagerApp/migrations/0005_auto_20200620_1852.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ManagerApp/migrations/0006_auto_20200620_1859.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsLetterApp/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsLetterApp/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsLetterApp/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsLetterApp/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsLetterApp/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsLetterApp/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsLetterApp/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsLetterApp/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsLetterApp/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1265.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1269.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1271.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1271_5us51XX.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1271_fp5P8fy.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1277.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1277_3jI8FCl.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1277_CkBzhrb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1277_N9mofeJ.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1277_NQ9fMkm.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1277_hklSk60.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1277_k1lKq7w.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1277_lYwTSs8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1277_tebgP7p.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1283.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1283_07wmtum.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1283_7pRXk4N.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1283_Qy9S1Zt.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1283_Y6CNivQ.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1283_Zv5Z0NP.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1283_hKhrOn4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1283_wLCGcvx.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1285.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1285_642l4BB.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1285_8k0aCFM.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1285_NUTrrNx.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1285_cWMnXAQ.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1285_k7VqNqr.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1285_roUgHB8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1285_s8W5O8p.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1285_xATnmk4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1348.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/AO8I1352.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/comments_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/emails.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/phones.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/suggestapp/migrations/0008_suggest_rand.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/suggestapp/migrations/0009_remove_suggest_rand.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/suggestapp/migrations/0010_suggest_rand.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/suggestapp/migrations/0011_auto_20200621_2023.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ManagerApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ManagerApp/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ManagerApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ManagerApp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/AO8I1343_DBcZCqX.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mycarapp/templates/back/pages/manager_group.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/manager_group.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mycarapp/templates/back/pages/manager_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/manager_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagerApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ManagerApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/AO8I1343_aXHRM8p.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/AO8I1343_bF0Cdoa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/AO8I1343_v86im7c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/AO8I1350.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/AO8I1375.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/logo-01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/logo-01_6swtM8j.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/logo-01_JA8XdHT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/logo-01_hbWWS9y.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/logo-02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/logo-02_41VGDkL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/logo-02_8q8q7hy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/logo-02_QT8svOp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mycarapp/templates/back/pages/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mycarapp/templates/back/pages/master.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/master.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mycarapp/templates/back/pages/suggest_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/suggest_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mycarapp/templates/front/pages/master.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/front/pages/master.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mycarapp/templates/front/pages/suggest_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/front/pages/suggest_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mycarapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/suggestapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/suggestapp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/suggestapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/suggestapp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/suggestapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/suggestapp/views.py" afterDir="false" />
@@ -86,7 +156,28 @@
       <recent name="D:\New_business\datuna\my_site\mysite\mycarapp\templates\front" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.views (1)">
+    <configuration name="views (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="mysite" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/CommentApp" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CommentApp/views.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="mysite" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -110,6 +201,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.views (1)" />
         <item itemvalue="Python.views" />
       </list>
     </recent_temporary>
@@ -226,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592330250176</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="publish">
+      <created>1592471062916</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1592471062916</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -257,13 +356,14 @@
     <MESSAGE value="contact" />
     <MESSAGE value="user" />
     <MESSAGE value="group" />
-    <option name="LAST_COMMIT_MESSAGE" value="group" />
+    <MESSAGE value="publish" />
+    <option name="LAST_COMMIT_MESSAGE" value="publish" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="309" y="42" key="#Inspections" timestamp="1590323710674">
+    <state x="309" y="42" key="#Inspections" timestamp="1592661005677">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="309" y="42" key="#Inspections/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1590323710674" />
+    <state x="309" y="42" key="#Inspections/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1592661005677" />
     <state x="442" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590314889433">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -284,22 +384,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="503" y="69" key="Github.UntrackedFilesDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1590313826485" />
-    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1590323696875">
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1592751258716">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1590323696875" />
-    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1590323696875">
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1592751258716" />
+    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1592751258716">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1590323696875" />
-    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1590323696875">
+    <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1592751258716" />
+    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1592751258715">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1590323696875" />
-    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1590323696875">
+    <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1592751258715" />
+    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1592751258716">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1590323696875" />
+    <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1592751258716" />
     <state x="184" y="9" key="SettingsEditor" timestamp="1590658375907">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -308,10 +408,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="530" y="277" key="VCS.ChangelistChooser/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1591788289079" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1592330258732">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1592471077342">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1592330258732" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1592471077342" />
     <state width="600" height="428" key="javadoc.popup" timestamp="1592381481337">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

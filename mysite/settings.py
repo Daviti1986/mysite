@@ -43,7 +43,10 @@ INSTALLED_APPS = [
     'SubCategoryApp',
     'ContactFormApp',
     'TrendingApp',
-    'ManagerApp'
+    'ManagerApp',
+    'NewsLetterApp',
+    'django.contrib.humanize',
+    'CommentApp',
 
 ]
 

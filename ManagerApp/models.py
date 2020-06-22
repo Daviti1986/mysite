@@ -6,11 +6,11 @@ from django.db import models
 class ManagerApp(models.Model):
 
 
-    name     = models.CharField(max_length= 30, default= '' )
-    lastname = models.CharField(max_length= 30, default= '' )
-    usertxt  = models.CharField(max_length= 30, default= '' )
-    age      = models.CharField(max_length= 30, default= '' )
-    email    = models.CharField(max_length= 30, default= '' )
+    name     = models.CharField(max_length= 30 )
+    lastname = models.TextField()
+    usertxt  = models.TextField()
+    age      = models.TextField(default='')
+    email    = models.TextField(default='')
 
     def __str__(self):
         return self.name + ' | ' + str (self.pk)

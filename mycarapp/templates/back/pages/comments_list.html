@@ -1,0 +1,74 @@
+{% extends 'back/pages/master.html' %}
+{% load staticfiles %}
+
+{% block mainblock %}
+<!-- Datatables Header -->
+<div class="content-header">
+    <div class="header-section">
+        <h1>
+            <i class="fa fa-table"></i>Comment List<br><small>you can add, edit and delete your data</small>
+        </h1>
+    </div>
+</div>
+<ul class="breadcrumb breadcrumb-top">
+    <li>Comment</li>
+    <li><a href="/comment/list">List</a></li>
+</ul>
+<!-- END Datatables Header -->
+<!-- Datatables Content -->
+<div class="block full">
+    <div class="block-title">
+        <h2><strong>Suggest</strong> List</h2>
+    </div>
+    <div class="table-responsive">
+        <table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
+            <thead>
+            <tr>
+                <th class="text-center">ID</th>
+
+                <th>Name</th>
+                <th>Date & Time</th>
+                <th>Email</th>
+                <th>SMS</th>
+                <th>Status</th>
+
+                <th class="text-center">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for cc in comment %}
+            <tr>
+                <td class="text-center">{{cc.pk}}</td>
+                <td><a href="javascript:void(0)">{{cc.name}}</a></td>
+                <td><a href="javascript:void(0)">{{cc.date}} | {{cc.time}}</a></td>
+                <td><a href="javascript:void(0)">{{cc.email}}</a></td>
+                <td>{{cc.cm}}</td>
+                {% if cc.status == 0 %}
+                <td>Pendding</td>
+                {% elif cc.status == 1 %}
+                <td>Confirmed</td>
+                {% endif %}
+
+                <td class="text-center">
+                    <div class="btn-group">
+                        <a href="{% url 'comments_confirmed' pk=cc.pk %}" data-toggle="tooltip" title="Confirm" class="btn btn-xs btn-default"><i class="fa fa-pencil"></i>Confirmed</a>
+                        <a href="{% url 'comments_delete' pk=cc.pk %}" data-toggle="tooltip" title="Delete" class="btn btn-xs btn-danger"><i class="fa fa-times"></i>Delete</a>
+
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- END Datatables Content -->
+{% endblock %}
+
+{% block footerblock %}
+
+<!-- Load and execute javascript code used only in this page -->
+        <script src="{% static 'back/js/pages/tablesDatatables.js' %}"></script>
+        <script>$(function(){ TablesDatatables.init(); });</script>
+
+{% endblock %}
