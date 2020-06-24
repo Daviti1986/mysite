@@ -42,10 +42,13 @@
 
 
 
+
 	<!-- Post -->
 	<section class="post bg0 p-t-85">
 		<div class="container">
 			<div class="row justify-content-center">
+				{% for ln in lastsuggesttwo%}
+				{% if forloop.counter == 1 %}
 				<div class="col-md-12 col-lg-12">
 					<div class="p-r-10 p-rl-0-sr991 p-b-20">
 						<!-- Entertainment  -->
@@ -152,13 +155,14 @@
 									</div>
 								</div>
 							</div>
+
 						</div>
 
 						<!-- Business  -->
 						<div class="p-b-25">
 							<div class="how2 how2-cl2 flex-s-c">
 								<h3 class="f1-m-2 cl13 tab01-title">
-									Business
+									{{ln.catname}}
 								</h3>
 							</div>
 
@@ -166,20 +170,20 @@
 								<div class="size-w-6 w-full-sr575">
 									<!-- Item post -->
 									<div class="m-b-30">
-										<a href="blog-detail-02.html" class="wrap-pic-w hov1 trans-03">
-											<img src="{% static 'front/images/post-10.jpg' %}" alt="IMG">
+										<a href="{%url 'suggest_detail' word=ln.name %}" class="wrap-pic-w hov1 trans-03">
+											<img src="{{ln.picurl}}" alt="IMG">
 										</a>
 
 										<div class="p-t-25">
 											<h5 class="p-b-5">
-												<a href="blog-detail-02.html" class="f1-m-3 cl2 hov-cl10 trans-03">
-													Bitcoin lorem ipsum dolor sit amet consectetur
+												<a href="{%url 'suggest_detail' word=ln.name %}" class="f1-m-3 cl2 hov-cl10 trans-03">
+													{{ln.name}}
 												</a>
 											</h5>
 
 											<span class="cl8">
 												<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-													Finance
+													{{ln.writer}}
 												</a>
 
 												<span class="f1-s-3 m-rl-3">
@@ -187,13 +191,11 @@
 												</span>
 
 												<span class="f1-s-3">
-													Feb 18
+													{{ln.date}} | {{ln.time}}
 												</span>
 											</span>
 
-											<p class="f1-s-1 cl6 p-t-18">
-												Duis eu felis id tortor congue consequat. Sed vitae vestibulum enim, et pharetra magna
-											</p>
+
 										</div>
 									</div>
 								</div>
@@ -458,11 +460,14 @@
 						{% endfor %}
 					</div>
 				</div>
+				{% endif %}
+				{% endfor %}
 
 
 			</div>
 		</div>
 	</section>
+
 
 
 

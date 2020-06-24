@@ -30,6 +30,7 @@ urlpatterns = [
     url(r'', include('ManagerApp.urls')),
     url(r'', include('NewsLetterApp.urls')),
     url(r'', include('CommentApp.urls')),
+    url(r'', include('BlackListApp.urls')),
 ]
 
 if settings.DEBUG:

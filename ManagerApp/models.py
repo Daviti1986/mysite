@@ -11,6 +11,8 @@ class ManagerApp(models.Model):
     usertxt  = models.TextField()
     age      = models.TextField(default='')
     email    = models.TextField(default='')
+    ip       = models.TextField(default='')
+    country  = models.TextField(default='')
 
     def __str__(self):
         return self.name + ' | ' + str (self.pk)

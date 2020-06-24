@@ -8,6 +8,7 @@ from CategoryApp.models import CategoryApp
 from TrendingApp.models import TrendingApp
 import random
 from CommentApp.models import Comment
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 # Create your views here.
@@ -86,7 +87,19 @@ def suggest_list(request):
     if perm == 0:
         suggest = Suggest.objects.filter(writer=request.user)
     elif perm == 1:
-        suggest = Suggest.objects.all()
+        suggestpagin = Suggest.objects.all()
+        paginator = Paginator(suggestpagin,1)
+        page = request.GET.get('page')
+
+        try:
+            suggest = paginator.page(page)
+
+        except EmptyPage :
+            suggest = paginator.page(paginator.num_page)
+
+        except PageNotAnInteger :
+            suggest = paginator.page(1)
+
 
     return render(request, 'back/pages/suggest_list.html', {'suggest': suggest})
 

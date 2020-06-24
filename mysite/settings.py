@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'NewsLetterApp',
     'django.contrib.humanize',
     'CommentApp',
+    'BlackListApp',
 
 ]
 

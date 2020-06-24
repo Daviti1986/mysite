@@ -21,7 +21,7 @@
         <h2><strong>Suggest</strong> List</h2>
     </div>
     <div class="table-responsive">
-        <table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
+        <table id="" class="table table-vcenter table-condensed table-bordered">
             <thead>
             <tr>
                 <th class="text-center">ID</th>
@@ -63,6 +63,24 @@
             {% endfor %}
             </tbody>
         </table>
+        Page {{suggest.number}} from {{suggest.paginator.num_pages}}
+        <br/><br/>
+        {% if suggest.has_previous %}
+        <a href="?page={{suggest.previous_page_number}}" data-toggle="tooltip" title="Previous" class="btn btn-xs btn-default">Previous</a>
+        {% endif%}
+
+        {% for i in suggest.paginator.page_range%}
+
+            {% if suggest.number == i %}
+            <a href="" onclick="return false;" data-toggle="tooltip" title="{{Disables}}" class="btn btn-xs btn-default">{{i}}</a>
+            {% else %}
+            <a href="?page={{i}}" data-toggle="tooltip" title="{{i}}" class="btn btn-xs btn-default">{{i}}</a>
+            {% endif %}
+        {% endfor %}
+
+        {% if suggest.has_next %}
+        <a href="?page={{suggest.next_page_number}}" data-toggle="tooltip" title="Next" class="btn btn-xs btn-default">Next</a>
+        {% endif %}
     </div>
 </div>
 <!-- END Datatables Content -->

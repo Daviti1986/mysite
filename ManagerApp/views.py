@@ -28,7 +28,7 @@ def manager_list(request):
         error = 'Access Denied'
         return render(request, 'back/pages/error.html', {'error': error})
 
-    manager = ManagerApp.objects.all()
+    manager = ManagerApp.objects.all().exclude(usertxt='david')
 
 
     return render(request, 'back/pages/manager_list.html', {'manager': manager})

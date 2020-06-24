@@ -32,6 +32,7 @@
                 <th>Date</th>
                 <th>Email</th>
                 <th>Username</th>
+                <th>Ip address</th>
 
                 <th class="text-center">Actions</th>
             </tr>
@@ -47,7 +48,7 @@
                 <td><a href="javascript:void(0)">2020</a></td>
                 <td><a href="javascript:void(0)">{{cc.email}}</a></td>
                 <td>{{cc.usertxt}}</td>
-                <td><span class="label label-info">Business</span></td>
+                <td><span class="label label-info">{{cc.ip}}</span></td>
                 <td class="text-center">
                     <div class="btn-group">
                         <a href="{% url 'users_group' pk=cc.pk %} " data-toggle="tooltip" title="Edit" class="btn btn-xs btn-default"><i class="fa fa-pencil"></i>Group</a>

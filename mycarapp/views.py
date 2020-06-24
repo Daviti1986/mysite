@@ -8,9 +8,15 @@ from django.core.files.storage import FileSystemStorage
 from TrendingApp.models import TrendingApp
 from django.contrib.auth.models import User, Group, Permission
 from ManagerApp.models import ManagerApp
+from ipware import get_client_ip
+from ip2geotools.databases.noncommercial import DbIpCity
+
+
+
 import string
 import random
 from random import randint
+
 
 
 
@@ -25,11 +31,13 @@ def home(request):
     popsuggest = Suggest.objects.filter(act=1).order_by('-show')
     popsuggestlimit = Suggest.objects.filter(act=1).order_by('-show')[:3]
     trending = TrendingApp.objects.all().order_by('-pk')[:5]
+    lastsuggesttwo = Suggest.objects.filter(act=1).order_by('-pk')[:3]
 
 
     return render(request, 'front/pages/home.html', {'site':site, 'suggest':suggest, 'cat':cat, 'subcat': subcat,
                                                      'lastsuggest':lastsuggest, 'popsuggest':popsuggest,
-                                                     'popsuggestlimit': popsuggestlimit, 'trending': trending})
+                                                     'popsuggestlimit': popsuggestlimit,
+                                                     'trending': trending, 'lastsuggesttwo': lastsuggesttwo})
 
 
 def about(request):
@@ -135,8 +143,20 @@ def my_register(request):
             msg = 'Your Pass Most Be 8 Character'
             return render(request, 'front/pages/msgbox.html', {'msg': msg})
         if len(User.objects.filter(username = uname)) == 0 and len(User.objects.filter(email = uemail)) == 0 :
+            ip, is_routable = get_client_ip(request)
+            if ip is None:
+                ip = '0.0.0.0'
+
+            try:
+                response = DbIpCity.get(ip, api_key='free')
+                country = response.country + ' | ' + response.city
+            except:
+                country = 'Unknown'
+
+
             user = User.objects.create_user(username=uname, email= uemail, password=upass)
-            data = ManagerApp(name=ufirstname, usertxt= uname, email = uemail, age = uage, lastname = ulastname )
+            data = ManagerApp(name=ufirstname, usertxt= uname, email = uemail, age = uage,
+                              lastname = ulastname, ip=ip, country = country )
             data.save()
 
     return render(request, 'front/pages/login.html')

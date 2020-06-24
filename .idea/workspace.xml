@@ -19,94 +19,29 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ded3f7a7-fc7d-4d1d-9999-3c75c5ef4e10" name="Default Changelist" comment="publish">
-      <change afterPath="$PROJECT_DIR$/CommentApp/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CommentApp/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CommentApp/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CommentApp/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CommentApp/migrations/0002_comment_status.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CommentApp/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CommentApp/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CommentApp/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CommentApp/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CommentApp/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ManagerApp/migrations/0004_auto_20200620_1833.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ManagerApp/migrations/0005_auto_20200620_1852.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ManagerApp/migrations/0006_auto_20200620_1859.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsLetterApp/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsLetterApp/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsLetterApp/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsLetterApp/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsLetterApp/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsLetterApp/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsLetterApp/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsLetterApp/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsLetterApp/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1265.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1269.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1271.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1271_5us51XX.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1271_fp5P8fy.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1277.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1277_3jI8FCl.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1277_CkBzhrb.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1277_N9mofeJ.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1277_NQ9fMkm.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1277_hklSk60.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1277_k1lKq7w.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1277_lYwTSs8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1277_tebgP7p.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1283.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1283_07wmtum.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1283_7pRXk4N.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1283_Qy9S1Zt.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1283_Y6CNivQ.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1283_Zv5Z0NP.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1283_hKhrOn4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1283_wLCGcvx.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1285.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1285_642l4BB.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1285_8k0aCFM.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1285_NUTrrNx.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1285_cWMnXAQ.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1285_k7VqNqr.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1285_roUgHB8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1285_s8W5O8p.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1285_xATnmk4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1348.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/AO8I1352.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/comments_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/emails.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/phones.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/suggestapp/migrations/0008_suggest_rand.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/suggestapp/migrations/0009_remove_suggest_rand.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/suggestapp/migrations/0010_suggest_rand.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/suggestapp/migrations/0011_auto_20200621_2023.py" afterDir="false" />
+    <list default="true" id="ded3f7a7-fc7d-4d1d-9999-3c75c5ef4e10" name="Default Changelist" comment="comment">
+      <change afterPath="$PROJECT_DIR$/BlackListApp/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlackListApp/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlackListApp/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlackListApp/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlackListApp/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlackListApp/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlackListApp/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlackListApp/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BlackListApp/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ManagerApp/migrations/0007_managerapp_ip.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ManagerApp/migrations/0008_managerapp_country.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/blacklist.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ManagerApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ManagerApp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/AO8I1343_aXHRM8p.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/AO8I1343_bF0Cdoa.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/AO8I1343_v86im7c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/AO8I1350.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/AO8I1375.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/logo-01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/logo-01_6swtM8j.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/logo-01_JA8XdHT.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/logo-01_hbWWS9y.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/logo-02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/logo-02_41VGDkL.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/logo-02_8q8q7hy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/logo-02_QT8svOp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mycarapp/templates/back/pages/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagerApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ManagerApp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mycarapp/templates/back/pages/manager_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/manager_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mycarapp/templates/back/pages/master.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/master.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mycarapp/templates/back/pages/suggest_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/back/pages/suggest_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mycarapp/templates/front/pages/master.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/front/pages/master.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mycarapp/templates/front/pages/suggest_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/front/pages/suggest_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mycarapp/templates/front/pages/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/templates/front/pages/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mycarapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mycarapp/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/suggestapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/suggestapp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/suggestapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/suggestapp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/suggestapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/suggestapp/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -325,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592471062916</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="comment">
+      <created>1592839865639</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1592839865639</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -357,7 +299,8 @@
     <MESSAGE value="user" />
     <MESSAGE value="group" />
     <MESSAGE value="publish" />
-    <option name="LAST_COMMIT_MESSAGE" value="publish" />
+    <MESSAGE value="comment" />
+    <option name="LAST_COMMIT_MESSAGE" value="comment" />
   </component>
   <component name="WindowStateProjectService">
     <state x="309" y="42" key="#Inspections" timestamp="1592661005677">
@@ -408,10 +351,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="530" y="277" key="VCS.ChangelistChooser/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1591788289079" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1592471077342">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1592839877829">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1592471077342" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1592839877829" />
     <state width="600" height="428" key="javadoc.popup" timestamp="1592381481337">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
