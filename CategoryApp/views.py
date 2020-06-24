@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import CategoryApp
+import csv
+from django.http import HttpResponse
 
 
 # Create your views here.
@@ -55,4 +57,43 @@ def category_delete(request, pk):
 
 
     return  redirect('category_list')
+
+
+def export_category_csv(request):
+
+    response = HttpResponse(content_type = 'text/csv')
+    response['Content-Disposition'] = 'attachment; filename="category.csv"'
+
+    writer = csv.writer(response)
+    writer.writerow(['Title', 'Counter'])
+    for i in CategoryApp.objects.all():
+        writer.writerow([i.name, i.count])
+
+    return response
+def import_category_csv(request):
+    if request.method == 'POST' :
+        csv_file = request.FILES['csv_file']
+
+        if not csv_file.name.endswith('.csv'):
+            error = "Please Input Csv File"
+            return render(request, 'back/pages/error.html', {'error': error})
+        if csv_file.multiple_chunks():
+            error = "File Too large"
+            return render(request, 'back/pages/error.html', {'error': error})
+
+        file_data = csv_file.read().decode('utf-8')
+        lines = file_data.split('\n')
+
+        for line in lines :
+            fields = line.split(',')
+            try:
+
+                if len(CategoryApp.objects.filter(name=fields[0])) == 0 and fields[0] != 'Title' and fields[0] != '':
+                    data = CategoryApp(name=fields[0])
+                    data.save()
+
+            except:
+                print('finish')
+
+    return redirect('category_list')
 
