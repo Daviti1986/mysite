@@ -11,5 +11,6 @@ urlpatterns = [
     url(r'^panel/suggest/edit/(?P<pk>\d+)/$', views.suggest_edit, name = 'suggest_edit'),
     url(r'^panel/suggest/publish/(?P<pk>\d+)/$', views.suggest_publish, name = 'suggest_publish'),
     url(r'^urls/(?P<pk>\d+)$', views.suggest_detail_short, name = 'suggest_detail_short'),
+    url(r'^urls/all/(?P<word>.*)$', views.suggest_all_show, name = 'suggest_all_show'),
 
 ]

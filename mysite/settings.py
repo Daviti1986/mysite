@@ -48,6 +48,9 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'CommentApp',
     'BlackListApp',
+    'django_crontab',
+    'qr_code',
+
 
 ]
 
@@ -138,3 +141,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+CRONJOBS = [
+
+    ('*/10 * * * *', 'main.cron.my_job')
+
+]

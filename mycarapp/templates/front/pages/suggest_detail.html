@@ -1,5 +1,6 @@
 {% extends 'front/pages/master.html' %}
 {% load staticfiles %}
+{% load qr_code %}
 
 
 {% block headblock %}
@@ -72,8 +73,8 @@
                                         {{i.show}} views
                                     </span>
 
-                                    <a href="#" class="f1-s-3 cl8 hov-cl10 trans-03 m-r-15">
-                                        0 Comment
+                                    <a  class="f1-s-3 cl8 hov-cl10 trans-03 m-r-15">
+                                        {{cmcount}} Comment
                                     </a>
                                 </div>
 
@@ -134,6 +135,11 @@
                             <a href="{% url 'suggest_detail_short' pk=i.rand %}">urls/{{i.rand}}</a>
 
                             <br/><br/><br/>
+
+
+
+
+
                             <div>
                                 {% if cmcount != 0 %}
                                 <div class="how2 how2-cl4 flex-s-c m-b-30">
@@ -205,7 +211,7 @@
                                     {% for p in cat %}
                                     {% if p.count != 0 %}
                                     <li class="how-bor3 p-rl-4">
-                                        <a href="#" class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13">
+                                        <a href="{% url 'suggest_all_show' word=p.name%}" class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13">
                                             {{p.name}} ({{p.count}})
                                         </a>
                                     </li>
@@ -382,6 +388,18 @@
                                         {{tagname}}
                                     </a>
                                     {% endfor %}
+
+                                </div>
+                            </div>
+                            <div>
+                                <div class="how2 how2-cl4 flex-s-c m-b-30">
+                                    <h3 class="f1-m-2 cl3 tab01-title">
+                                        QR code
+                                    </h3>
+                                </div>
+
+                                <div class="flex-wr-s-s m-rl--5">
+                                    {% qr_from_text link size=20 border=6 %}
 
                                 </div>
                             </div>

@@ -37,12 +37,14 @@ def suggest_detail(request, word):
     comment = Comment.objects.filter(news_id=code, status=1).order_by('-pk')[:3]
     cmcount = len(comment)
 
+    link = '/urls/' + str(Suggest.objects.get(name=word).rand)
+
     return render(request, 'front/pages/suggest_detail.html', {'site': site, 'suggest': suggest,
                                                                'cat': cat, 'subcat': subcat, 'lastsuggest': lastsuggest,
                                                                'showsuggest': showsuggest, 'popsuggest': popsuggest,
                                                                'popsuggestlimit': popsuggestlimit, 'tag': tag,
                                                                'trending': trending, 'code': code,
-                                                               'comment': comment, 'cmcount': cmcount})
+                                                               'comment': comment, 'cmcount': cmcount, 'link': link})
 
 def suggest_detail_short(request, pk):
     site = MyCar.objects.get(pk=2)
@@ -66,13 +68,13 @@ def suggest_detail_short(request, pk):
     except:
         print("Can't Add show ")
 
-
+    link = '/urls/' + str(Suggest.objects.get(name=word).rand)
 
     return render(request, 'front/pages/suggest_detail.html', {'site': site, 'suggest': suggest,
                                                                'cat': cat, 'subcat': subcat, 'lastsuggest': lastsuggest,
                                                                'showsuggest': showsuggest, 'popsuggest': popsuggest,
                                                                'popsuggestlimit': popsuggestlimit,
-                                                               'tag': tag, 'trending': trending})
+                                                               'tag': tag, 'trending': trending, 'link': link})
 
 
 def suggest_list(request):
@@ -337,3 +339,25 @@ def suggest_publish(request, pk):
     suggest.save()
 
     return redirect('suggest_list')
+
+def suggest_all_show(request, word):
+
+    catid = CategoryApp.objects.get(name=word).pk
+    allsuggest = Suggest.objects.filter(or_catid=catid)
+
+    site = MyCar.objects.get(pk=2)
+    suggest = Suggest.objects.filter(act=1).order_by('-pk')
+    cat = CategoryApp.objects.all()
+    subcat = SubCategoryApp.objects.all()
+    lastsuggest = Suggest.objects.filter(act=1).order_by('-pk')[:3]
+    popsuggest = Suggest.objects.filter(act=1).order_by('-show')
+    popsuggestlimit = Suggest.objects.filter(act=1).order_by('-show')[:3]
+    trending = TrendingApp.objects.all().order_by('-pk')[:5]
+    lastsuggesttwo = Suggest.objects.filter(act=1).order_by('-pk')[:3]
+
+    return render(request, 'front/pages/all_news.html', {'site': site, 'suggest': suggest, 'cat': cat, 'subcat': subcat,
+                                                     'lastsuggest': lastsuggest, 'popsuggest': popsuggest,
+                                                     'popsuggestlimit': popsuggestlimit,
+                                                     'trending': trending, 'lastsuggesttwo': lastsuggesttwo,
+                                                         'allsuggest': allsuggest})
+

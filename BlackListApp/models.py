@@ -7,6 +7,7 @@ class blacklist(models.Model):
 
 
     ip     = models.CharField(max_length= 10 )
+    date = models.CharField(max_length=12, default='')
 
 
     def __str__(self):
