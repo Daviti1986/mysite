@@ -5,4 +5,6 @@ urlpatterns = [
     url(r'^panel/newsletter/emails/$', views.news_email, name = 'news_email'),
     url(r'^panel/newsletter/phones/$', views.news_phones, name = 'news_phones'),
     url(r'^panel/newsletter/delete/(?P<pk>\d+)/(?P<num>\d+)/$', views.news_txt_delete, name = 'news_txt_delete'),
+    url(r'^send/email/$', views.send_email, name='send_email'),
+    url(r'^check/checklist/$', views.check_mychecklist, name='check_mychecklist'),
 ]

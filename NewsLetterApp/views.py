@@ -10,6 +10,10 @@ from django.contrib.auth.models import User, Group, Permission
 from django.contrib.contenttypes.models import ContentType
 import random
 from random import randint
+from django.core.mail import send_mail
+from django.conf import settings
+
+
 # Create your views here.
 
 def news_letter(request):
@@ -69,5 +73,45 @@ def news_txt_delete(request, pk, num):
 
     if int(num) == 2 :
         return redirect('news_phones')
+
+    return redirect('news_email')
+
+def send_email(request):
+    if request.method == 'POST':
+        txt = request.POST.get('txt')
+        a=[]
+        for i in NewsLetterApp.objects.all():
+            a.append(NewsLetterApp.objects.get(pk=i.pk).txt)
+
+
+        subjects = 'answer form'
+        message = txt
+        email_from = settings.EMAIL_HOST_USER
+        emails = a
+        send_mail(subjects, message, email_from, emails)
+
+
+    return redirect('news_email')
+
+def check_mychecklist(request):
+
+
+
+    if request.method == "POST":
+        ''''
+        for i in NewsLetterApp.objects.filter(status=1):
+            x = request.POST.get(str(i.pk))
+            print(x)
+            if str(x) == 'on' :
+                delete = NewsLetterApp.objects.filter(pk=i.pk)
+                delete.delete()
+        '''
+        check = request.POST.getlist('checks[]')
+        print(check)
+        for i in check :
+            delete = NewsLetterApp.objects.get(pk=i)
+            delete.delete()
+
+
 
     return redirect('news_email')

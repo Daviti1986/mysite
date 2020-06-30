@@ -25,7 +25,7 @@ SECRET_KEY = '*(a*3f4bh2y@3c)e2)qse$e62y7j5gt5wta&&o+=&xxlka1rf8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -147,3 +147,10 @@ CRONJOBS = [
     ('*/10 * * * *', 'main.cron.my_job')
 
 ]
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'mail.dalaudi.ge'
+EMAIL_HOST_USER = 'admin@dalaudi.ge'
+EMAIL_HOST_PASSWORD = 'Datuna1986'
+EMAIL_PORT = 587

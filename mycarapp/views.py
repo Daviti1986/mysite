@@ -10,6 +10,11 @@ from django.contrib.auth.models import User, Group, Permission
 from ManagerApp.models import ManagerApp
 from ipware import get_client_ip
 from ip2geotools.databases.noncommercial import DbIpCity
+from BlackListApp.models import blacklist
+from django.core.mail import send_mail
+from django.conf import settings
+from ContactFormApp.models import ContactFormApp
+
 
 
 
@@ -359,6 +364,38 @@ def change_pass(request):
 
 
     return render(request, 'back/pages/changepass.html')
+
+def answer_cm(request, pk):
+
+    if request.method == 'POST':
+        txt = request.POST.get('txt')
+        if txt == '':
+            error = 'Type Your Answer'
+            return render(request, 'back/pages/error.html', {'error': error})
+        to_email = ContactFormApp.objects.get(pk=pk).email
+
+        subjects = 'answer form'
+        message = txt
+        email_from = settings.EMAIL_HOST_USER
+        emails = [to_email]
+        send_mail(subjects, message, email_from, emails)
+        '''
+        send_mail(
+            'sender number 2',
+            txt,
+            'admin@dalaudi.ge',
+            [to_email],
+            fail_silently=False,
+        )
+        '''
+
+    return render(request, 'back/pages/answer_cm.html', {'pk':pk})
+
+
+
+
+
+
 
 
 

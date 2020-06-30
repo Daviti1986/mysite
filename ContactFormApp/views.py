@@ -61,3 +61,7 @@ def contact_delete(request, pk):
 
 
     return redirect( 'contact_show', )
+
+
+
+

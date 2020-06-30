@@ -9,7 +9,9 @@ from TrendingApp.models import TrendingApp
 import random
 from CommentApp.models import Comment
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from itertools import chain
 
+mysearch = ''
 
 # Create your views here.
 def suggest_detail(request, word):
@@ -355,9 +357,97 @@ def suggest_all_show(request, word):
     trending = TrendingApp.objects.all().order_by('-pk')[:5]
     lastsuggesttwo = Suggest.objects.filter(act=1).order_by('-pk')[:3]
 
+    paginator = Paginator(allsuggest, 12)
+    page = request.GET.get('page')
+    try:
+        allsuggests = paginator.page(page)
+    except EmptyPage :
+        allsuggests = paginator.page(paginator.num_page)
+    except PageNotAnInteger:
+        allsuggests = paginator.page(1)
     return render(request, 'front/pages/all_news.html', {'site': site, 'suggest': suggest, 'cat': cat, 'subcat': subcat,
                                                      'lastsuggest': lastsuggest, 'popsuggest': popsuggest,
                                                      'popsuggestlimit': popsuggestlimit,
                                                      'trending': trending, 'lastsuggesttwo': lastsuggesttwo,
-                                                         'allsuggest': allsuggest})
+                                                         'allsuggest': allsuggest, 'allsuggests' : allsuggests})
 
+def all_suggest(request):
+
+
+    allsuggest = Suggest.objects.all()
+
+    site = MyCar.objects.get(pk=2)
+    suggest = Suggest.objects.filter(act=1).order_by('-pk')
+    cat = CategoryApp.objects.all()
+    subcat = SubCategoryApp.objects.all()
+    lastsuggest = Suggest.objects.filter(act=1).order_by('-pk')[:3]
+    popsuggest = Suggest.objects.filter(act=1).order_by('-show')
+    popsuggestlimit = Suggest.objects.filter(act=1).order_by('-show')[:3]
+    trending = TrendingApp.objects.all().order_by('-pk')[:5]
+    lastsuggesttwo = Suggest.objects.filter(act=1).order_by('-pk')[:3]
+
+    paginator = Paginator(allsuggest, 12)
+    page = request.GET.get('page')
+    try:
+        allsuggests = paginator.page(page)
+    except EmptyPage:
+        allsuggests = paginator.page(paginator.num_page)
+    except PageNotAnInteger:
+        allsuggests = paginator.page(1)
+    return render(request, 'front/pages/all_suggest.html',
+                      {'site': site, 'suggest': suggest, 'cat': cat, 'subcat': subcat,
+                       'lastsuggest': lastsuggest, 'popsuggest': popsuggest,
+                       'popsuggestlimit': popsuggestlimit,
+                       'trending': trending, 'lastsuggesttwo': lastsuggesttwo,
+                       'allsuggest': allsuggest, 'allsuggests': allsuggests})
+
+
+def all_suggest_search(request):
+
+    if request.method == "POST":
+
+        txt = request.POST.get('txt')
+        mysearch = txt
+        name_query = Suggest.objects.filter(name__contains=txt)
+        short_txt_query = Suggest.objects.filter(short_txt__contains = txt)
+        body_txt_query = Suggest.objects.filter(body_txt__contains=txt)
+
+        allsuggest = list(chain(name_query, short_txt_query, body_txt_query))
+        allsuggest = list(dict.fromkeys(allsuggest))
+    else:
+
+        name_query = Suggest.objects.filter(name__contains=mysearch)
+        short_txt_query = Suggest.objects.filter(short_txt__contains=mysearch)
+        body_txt_query = Suggest.objects.filter(body_txt__contains=mysearch)
+
+        allsuggest = list(chain(name_query, short_txt_query, body_txt_query))
+        allsuggest = list(dict.fromkeys(allsuggest))
+
+
+    site = MyCar.objects.get(pk=2)
+    suggest = Suggest.objects.filter(act=1).order_by('-pk')
+    cat = CategoryApp.objects.all()
+    subcat = SubCategoryApp.objects.all()
+    lastsuggest = Suggest.objects.filter(act=1).order_by('-pk')[:3]
+    popsuggest = Suggest.objects.filter(act=1).order_by('-show')
+    popsuggestlimit = Suggest.objects.filter(act=1).order_by('-show')[:3]
+    trending = TrendingApp.objects.all().order_by('-pk')[:5]
+    lastsuggesttwo = Suggest.objects.filter(act=1).order_by('-pk')[:3]
+
+
+
+    paginator = Paginator(allsuggest, 12)
+    page = request.GET.get('page')
+    try:
+        allsuggest = paginator.page(page)
+    except EmptyPage:
+        allsuggest = paginator.page(paginator.num_page)
+    except PageNotAnInteger:
+        allsuggest = paginator.page(1)
+
+    return render(request, 'front/pages/all_suggest.html',
+                      {'site': site, 'suggest': suggest, 'cat': cat, 'subcat': subcat,
+                       'lastsuggest': lastsuggest, 'popsuggest': popsuggest,
+                       'popsuggestlimit': popsuggestlimit,
+                       'trending': trending, 'lastsuggesttwo': lastsuggesttwo,
+                       'allsuggest': allsuggest})
