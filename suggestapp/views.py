@@ -44,7 +44,7 @@ def suggest_detail(request, word):
     return render(request, 'front/pages/suggest_detail.html', {'site': site, 'suggest': suggest,
                                                                'cat': cat, 'subcat': subcat, 'lastsuggest': lastsuggest,
                                                                'showsuggest': showsuggest, 'popsuggest': popsuggest,
-                                                               'popsuggestlimit': popsuggestlimit, 'tag': tag,
+                                                               'popsuggestlimit': popsuggestlimit, 'tagname': tagname,
                                                                'trending': trending, 'code': code,
                                                                'comment': comment, 'cmcount': cmcount, 'link': link})
 
@@ -386,6 +386,41 @@ def all_suggest(request):
     trending = TrendingApp.objects.all().order_by('-pk')[:5]
     lastsuggesttwo = Suggest.objects.filter(act=1).order_by('-pk')[:3]
 
+    now = datetime.datetime.now()
+    year = now.year
+    month = now.month
+    day = now.day
+    if len(str(day)) == 1:
+        day = '0' + str(day)
+    if len(str(month)) == 1:
+        month = '0' + str(month)
+    today = str(year) + '/' + str(month) + '/' + str(day)
+    f_rom = []
+    t_o = []
+    for i in range(30):
+        date = datetime.datetime.now() - datetime.timedelta(days=i)
+        year = date.year
+        month = date.month
+        day = date.day
+        if len(str(day)) == 1:
+            day = '0' + str(day)
+        if len(str(month)) == 1:
+            month = '0' + str(month)
+        date = str(year) + '/' + str(month) + '/' + str(day)
+        f_rom.append(date)
+    for i in range(30):
+        date = datetime.datetime.now() - datetime.timedelta(days=i)
+
+        year = date.year
+        month = date.month
+        day = date.day
+        if len(str(day)) == 1:
+            day = '0' + str(day)
+        if len(str(month)) == 1:
+            month = '0' + str(month)
+        date = str(year) + '/' + str(month) + '/' + str(day)
+        t_o.append(date)
+
     paginator = Paginator(allsuggest, 12)
     page = request.GET.get('page')
     try:
@@ -399,7 +434,7 @@ def all_suggest(request):
                        'lastsuggest': lastsuggest, 'popsuggest': popsuggest,
                        'popsuggestlimit': popsuggestlimit,
                        'trending': trending, 'lastsuggesttwo': lastsuggesttwo,
-                       'allsuggest': allsuggest, 'allsuggests': allsuggests})
+                       'allsuggest': allsuggest, 'allsuggests': allsuggests, 'f_rom': f_rom, 't_o': t_o})
 
 
 def all_suggest_search(request):
@@ -407,19 +442,90 @@ def all_suggest_search(request):
     if request.method == "POST":
 
         txt = request.POST.get('txt')
+        catid = request.POST.get('cat')
+        f_rom = request.POST.get('from')
+        t_o = request.POST.get('to')
         mysearch = txt
-        name_query = Suggest.objects.filter(name__contains=txt)
-        short_txt_query = Suggest.objects.filter(short_txt__contains = txt)
-        body_txt_query = Suggest.objects.filter(body_txt__contains=txt)
+        if f_rom != '0' and t_o != '0':
+            if t_o < f_rom :
+                msg = "Your To Date Most Be Littel Than From Date"
+                return render(request, 'front/pages/msgbox.html', {'msg': msg})
+
+        if catid == '0':
+            if f_rom != '0' and t_o != '0':
+                name_query = Suggest.objects.filter(name__contains=txt, date__gte=f_rom, date__lte=t_o)
+                short_txt_query = Suggest.objects.filter(short_txt__contains = txt, date__gte=f_rom, date__lte=t_o)
+                body_txt_query = Suggest.objects.filter(body_txt__contains=txt, date__gte=f_rom, date__lte=t_o)
+            elif f_rom != '0' :
+                name_query = Suggest.objects.filter(name__contains=txt, date__gte=f_rom)
+                short_txt_query = Suggest.objects.filter(short_txt__contains = txt, date__gte=f_rom)
+                body_txt_query = Suggest.objects.filter(body_txt__contains=txt, date__gte=f_rom)
+            elif  t_o != '0':
+                name_query = Suggest.objects.filter(name__contains=txt, date__lte=t_o)
+                short_txt_query = Suggest.objects.filter(short_txt__contains = txt, date__lte=t_o)
+                body_txt_query = Suggest.objects.filter(body_txt__contains=txt, date__lte=t_o)
+            else:
+                name_query = Suggest.objects.filter(name__contains=txt)
+                short_txt_query = Suggest.objects.filter(short_txt__contains=txt)
+                body_txt_query = Suggest.objects.filter(body_txt__contains=txt)
+
+        else:
+            if f_rom != '0' and t_o != '0':
+                name_query = Suggest.objects.filter(name__contains=txt, or_catid=catid, date__gte=f_rom, date__lte=t_o)
+                short_txt_query = Suggest.objects.filter(short_txt__contains=txt, or_catid=catid, date__gte=f_rom, date__lte=t_o)
+                body_txt_query = Suggest.objects.filter(body_txt__contains=txt, or_catid=catid, date__gte=f_rom, date__lte=t_o)
+            elif f_rom != '0' :
+                name_query = Suggest.objects.filter(name__contains=txt, or_catid=catid, date__gte=f_rom)
+                short_txt_query = Suggest.objects.filter(short_txt__contains=txt, or_catid=catid, date__gte=f_rom)
+                body_txt_query = Suggest.objects.filter(body_txt__contains=txt, or_catid=catid, date__gte=f_rom)
+            elif t_o != '0':
+                name_query = Suggest.objects.filter(name__contains=txt, or_catid=catid, date__lte=t_o)
+                short_txt_query = Suggest.objects.filter(short_txt__contains=txt, or_catid=catid, date__lte=t_o)
+                body_txt_query = Suggest.objects.filter(body_txt__contains=txt, or_catid=catid, date__lte=t_o)
+            else:
+                name_query = Suggest.objects.filter(name__contains=txt, or_catid=catid)
+                short_txt_query = Suggest.objects.filter(short_txt__contains=txt, or_catid=catid)
+                body_txt_query = Suggest.objects.filter(body_txt__contains=txt, or_catid=catid)
+
+
 
         allsuggest = list(chain(name_query, short_txt_query, body_txt_query))
         allsuggest = list(dict.fromkeys(allsuggest))
     else:
-
-        name_query = Suggest.objects.filter(name__contains=mysearch)
-        short_txt_query = Suggest.objects.filter(short_txt__contains=mysearch)
-        body_txt_query = Suggest.objects.filter(body_txt__contains=mysearch)
-
+        if catid == '0':
+            if f_rom != '0' and t_o != '0':
+                name_query = Suggest.objects.filter(name__contains = mysearch, date__gte=f_rom, date__lte=t_o)
+                short_txt_query = Suggest.objects.filter(short_txt__contains = mysearch, date__gte=f_rom, date__lte=t_o)
+                body_txt_query = Suggest.objects.filter(body_txt__contains=mysearch, date__gte=f_rom, date__lte=t_o)
+            elif f_rom != '0' :
+                name_query = Suggest.objects.filter(name__contains = mysearch, date__gte=f_rom)
+                short_txt_query = Suggest.objects.filter(short_txt__contains = mysearch, date__gte=f_rom)
+                body_txt_query = Suggest.objects.filter(body_txt__contains=mysearch, date__gte=f_rom)
+            elif t_o != '0':
+                name_query = Suggest.objects.filter(name__contains = mysearch, date__lte=t_o)
+                short_txt_query = Suggest.objects.filter(short_txt__contains = mysearch, date__lte=t_o)
+                body_txt_query = Suggest.objects.filter(body_txt__contains=mysearch, date__lte=t_o)
+            else:
+                name_query = Suggest.objects.filter(name__contains=mysearch)
+                short_txt_query = Suggest.objects.filter(short_txt__contains=mysearch)
+                body_txt_query = Suggest.objects.filter(body_txt__contains=mysearch)
+        else:
+            if f_rom != '0' and t_o != '0':
+                name_query = Suggest.objects.filter(name__contains=mysearch, or_catid=catid, date__gte=f_rom, date__lte=t_o)
+                short_txt_query = Suggest.objects.filter(short_txt__contains=mysearch, or_catid=catid, date__gte=f_rom, date__lte=t_o)
+                body_txt_query = Suggest.objects.filter(body_txt__contains=mysearch, or_catid=catid, date__gte=f_rom, date__lte=t_o)
+            elif f_rom != '0' :
+                name_query = Suggest.objects.filter(name__contains=mysearch, or_catid=catid, date__gte=f_rom)
+                short_txt_query = Suggest.objects.filter(short_txt__contains=mysearch, or_catid=catid, date__gte=f_rom)
+                body_txt_query = Suggest.objects.filter(body_txt__contains=mysearch, or_catid=catid, date__gte=f_rom)
+            elif t_o != '0':
+                name_query = Suggest.objects.filter(name__contains=mysearch, or_catid=catid, date__lte=t_o)
+                short_txt_query = Suggest.objects.filter(short_txt__contains=mysearch, or_catid=catid, date__lte=t_o)
+                body_txt_query = Suggest.objects.filter(body_txt__contains=mysearch, or_catid=catid, date__lte=t_o)
+            else:
+                name_query = Suggest.objects.filter(name__contains=mysearch, or_catid=catid)
+                short_txt_query = Suggest.objects.filter(short_txt__contains=mysearch, or_catid=catid)
+                body_txt_query = Suggest.objects.filter(body_txt__contains=mysearch, or_catid=catid)
         allsuggest = list(chain(name_query, short_txt_query, body_txt_query))
         allsuggest = list(dict.fromkeys(allsuggest))
 
@@ -433,6 +539,45 @@ def all_suggest_search(request):
     popsuggestlimit = Suggest.objects.filter(act=1).order_by('-show')[:3]
     trending = TrendingApp.objects.all().order_by('-pk')[:5]
     lastsuggesttwo = Suggest.objects.filter(act=1).order_by('-pk')[:3]
+
+    now = datetime.datetime.now()
+    year = now.year
+    month = now.month
+    day = now.day
+    if len(str(day)) == 1:
+        day = '0' + str(day)
+    if len(str(month)) == 1:
+        month = '0' + str(month)
+    today = str(year) + '/' + str(month) + '/' + str(day)
+    f_rom = []
+    t_o = []
+    for i in range(30):
+        data = datetime.datetime.now() - datetime.timedelta(days=i)
+
+        year = data.year
+        month = data.month
+        day = data.day
+        if len(str(day)) == 1:
+            day = '0' + str(day)
+        if len(str(month)) == 1:
+            month = '0' + str(month)
+        data = str(year) + '/' + str(month) + '/' + str(day)
+        f_rom.append(data)
+    for i in range(30):
+        data = datetime.datetime.now() - datetime.timedelta(days=i)
+
+        year = data.year
+        month = data.month
+        day = data.day
+        if len(str(day)) == 1:
+            day = '0' + str(day)
+        if len(str(month)) == 1:
+            month = '0' + str(month)
+        data = str(year) + '/' + str(month) + '/' + str(day)
+        t_o.append(data)
+
+
+
 
 
 
@@ -450,4 +595,10 @@ def all_suggest_search(request):
                        'lastsuggest': lastsuggest, 'popsuggest': popsuggest,
                        'popsuggestlimit': popsuggestlimit,
                        'trending': trending, 'lastsuggesttwo': lastsuggesttwo,
-                       'allsuggest': allsuggest})
+                       'allsuggest': allsuggest, 'f_rom': f_rom, 't_o': t_o})
+
+
+#data = Suggest.objects.filter(date__gte='2020/02/02')
+#data = Suggest.objects.filter(date__lte='2020/02/02')
+#Suggest.objects.filter(pk=pk).exclude(date_gte='2020/02=1/01')
+#Suggest.objects.filter(pk=pk).exclude(pk=10)

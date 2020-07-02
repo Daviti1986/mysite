@@ -12,6 +12,10 @@ class MyCar(models.Model):
     yt       = models.CharField(default= '-', max_length=30 )
     Tell     = models.CharField(default= '-', max_length=30 )
     Link     = models.CharField(default= '-', max_length=30 )
+
+    seo_txt = models.CharField(default='-', max_length=200)
+    seo_keyword = models.TextField(default='-')
+
     about    = models.TextField()
     abouttxt = models.TextField(default='')
 

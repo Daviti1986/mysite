@@ -14,6 +14,16 @@ from BlackListApp.models import blacklist
 from django.core.mail import send_mail
 from django.conf import settings
 from ContactFormApp.models import ContactFormApp
+from zeep import Client
+import requests
+import json
+from django.views.decorators.csrf import csrf_exempt
+from bs4 import BeautifulSoup
+import urllib.request as urllib2
+from rest_framework import viewsets
+from .serializer import SuggestSerializer
+from django.http import JsonResponse
+from NewsLetterApp.models import NewsLetterApp
 
 
 
@@ -26,6 +36,7 @@ from random import randint
 
 
 # Create your views here.
+@csrf_exempt
 
 def home(request):
     site = MyCar.objects.get(pk = 2)
@@ -37,6 +48,53 @@ def home(request):
     popsuggestlimit = Suggest.objects.filter(act=1).order_by('-show')[:3]
     trending = TrendingApp.objects.all().order_by('-pk')[:5]
     lastsuggesttwo = Suggest.objects.filter(act=1).order_by('-pk')[:3]
+
+
+    ''' Soup
+    client = Client('xxxxxxxxx.wsdl')
+    result = client.service.funcname(1,2,3)
+    print(result)
+    '''
+    '''Curl
+    url = 'xxxxxxxxxxxxxxxx'
+    payload = {'a':'b', 'c':'d'}
+    result = requests.post(url, params = payload)
+    print(result.url)
+    print(result)
+    '''
+    '''json
+    url = 'xxxxxxxxxxxxxx'
+    data = {'a':'b', 'c':'d'}
+    headers = {'Content-Type':'application/json', 'API_KEY': 'xxxxxxxxxxx'}
+    result = requests.post(url, data=json.dumps(data), headers=headers)
+    print(result)
+    '''
+    #return render('https://xxxxxxxx')
+
+    my_html = '''
+    <title> This  Is a Test </title>
+    <mytag> test </mytag>
+    
+    '''
+    '''
+    url = 'https://dalaudi.ge/'
+    result = requests.post(url)
+    print(result.content)
+    soup = BeautifulSoup(result.content, 'html.parser')
+    print(soup.title.string)
+
+    print(soup.title)
+    print(soup.title.string)
+    print(soup.title.parent.name)
+    '''
+    '''
+    url = 'http://127.0.0.1:8000/show/data/'
+    opener = urllib2.build_opener()
+    content = opener.open(url).read()
+    print(content)
+    '''
+    request.session['test'] = 'hello'
+    print(request.session['test'])
 
 
     return render(request, 'front/pages/home.html', {'site':site, 'suggest':suggest, 'cat':cat, 'subcat': subcat,
@@ -88,6 +146,7 @@ def panel(request):
 
 
     return render(request, 'back/pages/home.html')
+
 
 
 
@@ -204,6 +263,8 @@ def site_setting(request):
         yt = request.POST.get('yt')
         link = request.POST.get('link')
         txt = request.POST.get('txt')
+        seo_txt = request.POST.get('seo_txt')
+        seo_keyword = request.POST.get('seo_keyword')
 
         if fb   == '':
             fb = '#'
@@ -249,6 +310,8 @@ def site_setting(request):
         data.yt = yt
         data.link = link
         data.about = txt
+        data.seo_txt= seo_txt
+        data.seo_keyword = seo_keyword
 
         if picurl != '-':
             data.picurl = picurl
@@ -392,6 +455,18 @@ def answer_cm(request, pk):
     return render(request, 'back/pages/answer_cm.html', {'pk':pk})
 
 
+class SuggestViewSet(viewsets.ModelViewSet):
+
+
+    queryset = Suggest.objects.all()
+    serializer_class = SuggestSerializer
+
+def show_data(request):
+
+    count = NewsLetterApp.objects.filter(status=1).count()
+    data = {'count': count}
+
+    return JsonResponse(data)
 
 
 

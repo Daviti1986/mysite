@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'BlackListApp',
     'django_crontab',
     'qr_code',
+    'django.contrib.sitemaps',
+    'rest_framework',
 
 
 ]
@@ -154,3 +156,24 @@ EMAIL_HOST = 'mail.dalaudi.ge'
 EMAIL_HOST_USER = 'admin@dalaudi.ge'
 EMAIL_HOST_PASSWORD = 'Datuna1986'
 EMAIL_PORT = 587
+
+# ssl
+
+#SECURE_HSTS_SECONDS = 3600
+#SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+#SECURE_HSTS_PRELOAD = True
+
+#CSRF_COOKIE_SECURE = True
+#CSRF_COOKIE_SAMESITE = 'Strict'
+#SESSION_COOKIE_SECURE = True
+#SECURE_BROWSER_XSS_FILTER = True
+#SECURE_CONTENT_TYPE_NOSNIFF = True
+#SECURE_SSL_REDIRECT = True
+#X_FRAME_OPTIONS = 'DENY'
+
+SESSION_COOKIE_AGE = 3600
+SESSION_SAVE_EVERY_REQUEST = True
+
+
+
+

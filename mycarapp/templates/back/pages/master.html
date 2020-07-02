@@ -49,6 +49,22 @@
 
         {% block headblock%}
         {% endblock %}
+        <script>
+            var counter = 0;
+            async function worker(){
+                counter++
+                console.log('call', counter);
+
+                const response = await fetch('/show/data')
+                const myjson = await response.json();
+                console.log(myjson);
+                let obj= JSON.parse(JSON.stringify(myjson));
+                console.log(obj.Count);
+                alert('Emails Count : ' + obj.Count)
+             }
+             setInterval(worker, 60000)
+
+        </script>
     </head>
     <body>
         <!-- Page Wrapper -->

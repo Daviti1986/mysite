@@ -4,6 +4,9 @@
 
 {% block headblock %}
 <title>{{ site.name }} | All </title>
+<meta charset="UTF-8">
+<meta name="description" content="{{site.seo_txt}}">
+<meta name="keywords" content="{{site.seo_keyword}}">
 
 {% endblock %}
 <script>
@@ -28,8 +31,35 @@
             <div class="col-sm-6 col-md-4">
             <form action="{% url 'all_suggest_search' %}" method="POST">
 								{% csrf_token %}
-							<input class="bo-1-rad-3 bocl13 size-a-19 f1-s-13 cl5 plh6 p-rl-18 m-b-20" onkeypress="return Num(event);"
+							<!--<input class="bo-1-rad-3 bocl13 size-a-19 f1-s-13 cl5 plh6 p-rl-18 m-b-20" onkeypress="return Num(event);"
+								   type="txt" name="txt" placeholder="Input Your Word "> -->
+								<input class="bo-1-rad-3 bocl13 size-a-19 f1-s-13 cl5 plh6 p-rl-18 m-b-20"
 								   type="txt" name="txt" placeholder="Input Your Word ">
+								<select id="cat" name="cat" class="select-chosen" data-placeholder="Choose a Category.." style="width: 250px;">
+
+									<option value="0">All Suggest</option>
+									{% for i in categories %}
+                            			<option value="{{i.pk}}">{{i.name}}</option>
+                            		{% endfor %}
+                        		</select>
+								<br/> <br/> <br/>
+								<select id="from" name="from" class="select-chosen" data-placeholder="Choose a Category.." style="width: 250px;">
+
+									<option value="0">From</option>
+									{% for i in f_rom %}
+                            			<option value="{{i}}">{{i}}</option>
+                            		{% endfor %}
+                        		</select>
+								<br/><br/><br/>
+								<select id="to" name="to" class="select-chosen" data-placeholder="Choose a Category.." style="width: 250px;">
+
+									<option value="0">To</option>
+									{% for i in t_o %}
+                            			<option value="{{i}}">{{i}}</option>
+                            		{% endfor %}
+                        		</select>
+								<br/><br/>
+
 							<button type="submit" class="size-a-20 bg1 borad-2 f1-s-12 cl0 hov-btn1 trans-03 p-rl-15 m-t-20">
 								Search
 							</button>
